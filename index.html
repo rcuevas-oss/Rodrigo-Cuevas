@@ -1,105 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NexAI | Infraestructura de Automatización</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-      tailwind.config = {
-        theme: {
-          container: {
-            center: true,
-            padding: "2rem",
-            screens: {
-              "2xl": "1400px",
-            },
-          },
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-            colors: {
-              border: "hsl(214.3 31.8% 91.4%)", // slate-200
-              input: "hsl(214.3 31.8% 91.4%)",
-              ring: "hsl(215 20.2% 65.1%)", // slate-400
-              background: "hsl(0 0% 100%)",
-              foreground: "hsl(222.2 47.4% 11.2%)", // slate-950
-              primary: {
-                DEFAULT: "hsl(222.2 47.4% 11.2%)", // slate-950
-                foreground: "hsl(210 40% 98%)",
-              },
-              secondary: {
-                DEFAULT: "hsl(210 40% 96.1%)", // slate-100
-                foreground: "hsl(222.2 47.4% 11.2%)",
-              },
-              destructive: {
-                DEFAULT: "hsl(0 84.2% 60.2%)",
-                foreground: "hsl(210 40% 98%)",
-              },
-              muted: {
-                DEFAULT: "hsl(210 40% 96.1%)", // slate-100
-                foreground: "hsl(215.4 16.3% 46.9%)", // slate-500
-              },
-              accent: {
-                DEFAULT: "hsl(210 40% 96.1%)", // slate-100
-                foreground: "hsl(222.2 47.4% 11.2%)",
-              },
-              popover: {
-                DEFAULT: "hsl(0 0% 100%)",
-                foreground: "hsl(222.2 47.4% 11.2%)",
-              },
-              card: {
-                DEFAULT: "hsl(0 0% 100%)",
-                foreground: "hsl(222.2 47.4% 11.2%)",
-              },
-              brand: {
-                500: '#6366f1', // Indigo
-                600: '#4f46e5',
-              }
-            },
-            borderRadius: {
-              lg: "0.5rem",
-              md: "calc(0.5rem - 2px)",
-              sm: "calc(0.5rem - 4px)",
-            },
-            backgroundImage: {
-              'grid-pattern': "linear-gradient(to right, #e2e8f0 1px, transparent 1px), linear-gradient(to bottom, #e2e8f0 1px, transparent 1px)",
-            },
-          }
-        }
-      }
-    </script>
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: hsl(0 0% 100%);
-        color: hsl(222.2 47.4% 11.2%);
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-      .bg-grid-slate-100 {
-        background-size: 40px 40px;
-        mask-image: linear-gradient(to bottom, transparent, 10%, black, 90%, transparent);
-        -webkit-mask-image: linear-gradient(to bottom, transparent, 10%, black, 90%, transparent);
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "@google/genai": "https://esm.sh/@google/genai@^1.40.0"
-  }
-}
-</script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NexAI | Infraestructura de Automatización</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-  <body>
-    <div id="root"></div>
-  </body>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
 </html>

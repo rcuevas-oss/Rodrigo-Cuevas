@@ -10,6 +10,7 @@ export interface ServiceItem {
   description: string;
   icon: LucideIcon;
   tags: string[];
+  color?: string;
 }
 
 export interface MethodologyStep {

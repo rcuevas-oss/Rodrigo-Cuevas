@@ -1,7 +1,7 @@
-import { 
-  GitBranch, 
-  Terminal, 
-  Database, 
+import {
+  GitBranch,
+  Terminal,
+  Database,
 } from 'lucide-react';
 import { NavItem, ServiceItem, MethodologyStep, TestimonialItem, EngagementModel, PricingPlan } from './types';
 
@@ -26,18 +26,21 @@ export const SERVICES: ServiceItem[] = [
     title: "Consultoría & Estrategia",
     description: "Analizamos tu arquitectura actual para identificar oportunidades de alto impacto. Entregamos un roadmap técnico claro y un análisis de ROI proyectado.",
     icon: GitBranch,
+    color: "#8b5cf6",
     tags: ["Auditoría Técnica", "Diseño de Arquitectura", "Análisis ROI"]
   },
   {
     title: "Desarrollo de Soluciones",
     description: "Ingeniería de software a medida para integrar modelos de IA (LLMs) y automatizaciones complejas directamente en tu stack tecnológico existente.",
     icon: Terminal,
+    color: "#3b82f6",
     tags: ["Desarrollo Python/TS", "Integración API", "Agentes IA"]
   },
   {
     title: "Ingeniería de Datos",
     description: "Preparamos y estructuramos tus datos empresariales para que sean consumibles por sistemas inteligentes. ETLs robustos y gobernanza de datos.",
     icon: Database,
+    color: "#10b981",
     tags: ["Data Warehousing", "Limpieza de Datos", "Vector Stores"]
   },
 ];
