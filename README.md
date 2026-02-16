@@ -1,20 +1,82 @@
+# NexAI — Agencia de Automatización y Soluciones de IA
+
 <div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+  <img width="1200" alt="NexAI Hero" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+  
+  <p align="center">
+    <strong>Showroom Digital de Vanguardia</strong><br />
+    Software a medida • Automatización Inteligente • Productos de IA
+  </p>
 </div>
 
-# Run and deploy your AI Studio app
+---
 
-This contains everything you need to run your app locally.
+## 🚀 Sobre el Proyecto
 
-View your app in AI Studio: https://ai.studio/apps/drive/1TYK4vf5VhzM9Df3smdMMsgL-vP57el4U
+**NexAI** es un showroom interactivo diseñado para mostrar el potencial de la inteligencia artificial y la automatización en el mundo empresarial moderno. Esta landing page no es solo una carta de presentación, sino una experiencia visual que refleja la precisión y la innovación de nuestra agencia.
 
-## Run Locally
+### 🛠️ Especialidades:
+- **Software a Medida**: Desarrollo robusto y escalable adaptado a necesidades específicas.
+- **Automatización de Procesos**: Optimización de flojos de trabajo mediante agentes inteligentes.
+- **Productos de IA**: Integración de LLMs y modelos generativos para potenciar la productividad.
 
-**Prerequisites:**  Node.js
+---
 
+## 💻 Tech Stack
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+El proyecto está construido con lo último en desarrollo web para garantizar un rendimiento óptimo y una estética premium:
+
+- **Core**: [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
+- **UI & Estilos**:
+    - [Tailwind CSS](https://tailwindcss.com/) — Estilizado moderno y responsivo.
+    - [shadcn/ui](https://ui.shadcn.com/) — Componentes de UI de alta calidad y accesibles.
+    - [Framer Motion](https://www.framer.com/motion/) — Micro-animaciones y experiencias fluidas.
+- **Iconografía**: [Lucide React](https://lucide.dev/) & [React Icons](https://react-icons.github.io/react-icons/).
+- **IA**: integración con [Google Gemini SDK](https://ai.google.dev/).
+
+---
+
+## ✨ Características Principales
+
+- 🎨 **Diseño Estilo Showroom**: Una interfaz inmersiva con estética oscura y minimalista.
+- ⚡ **Performance Ultra-Rápida**: Gracias al uso de Vite y una arquitectura de componentes ligera.
+- 📱 **Totalmente Responsivo**: Adaptado para una visualización perfecta en cualquier dispositivo.
+- 🧩 **Arquitectura Modular**: Limpia y fácil de escalar siguiendo las mejores prácticas de React.
+
+---
+
+## 🛠️ Ejecución Local
+
+Para poner en marcha el showroom en tu entorno local, sigue estos pasos:
+
+1. **Clonar el repositorio**:
+   ```bash
+   git clone https://github.com/rcuevas-oss/Rodrigo-Cuevas.git
+   ```
+
+2. **Instalar dependencias**:
+   ```bash
+   npm install
+   ```
+
+3. **Configuración de Variables de Entorno**:
+   Crea un archivo `.env.local` en la raíz del proyecto y añade tu API Key de Gemini:
+   ```env
+   VITE_GEMINI_API_KEY=tu_api_key_aqui
+   ```
+
+4. **Iniciar servidor de desarrollo**:
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## 📄 Licencia
+
+Este proyecto es privado y propiedad de **NexAI -- Agencia de Automatización**.
+
+---
+<div align="center">
+  Desarrollado con ❤️ por el equipo de NexAI
+</div>

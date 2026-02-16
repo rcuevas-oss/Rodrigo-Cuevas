@@ -1,4 +1,15 @@
+import * as React from "react"
+import { cn } from "@/lib/utils"
 import { Button } from "./ui/button"
+import {
+    NavigationMenu,
+    NavigationMenuContent,
+    NavigationMenuItem,
+    NavigationMenuLink,
+    NavigationMenuList,
+    NavigationMenuTrigger,
+    navigationMenuTriggerStyle,
+} from "./ui/navigation-menu"
 import {
     Sheet,
     SheetContent,
@@ -6,107 +17,282 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "./ui/sheet"
-import { Menu, ArrowRight } from "lucide-react"
+import { Menu, Github, ArrowRight, Bot, Zap, Code, Terminal, Sparkles, BookOpen, Database, Users, BarChart3, MessageSquare } from "lucide-react"
 
-const nav = [
-    { label: "Servicios", href: "#servicios" },
-    { label: "Demos", href: "#evaluador-ia" },
-    { label: "Modelos", href: "#modelos" },
+const solutions = [
+    {
+        title: "Automatización de Flujos",
+        href: "#servicios",
+        description: "Optimiza procesos repetitivos con agentes inteligentes.",
+        icon: Zap
+    },
+    {
+        title: "Software a Medida",
+        href: "#servicios",
+        description: "Construimos infraestructura robusta y escalable.",
+        icon: Code
+    },
+    {
+        title: "Modelos de IA",
+        href: "#servicios",
+        description: "Modelos personalizados entrenados con tus datos.",
+        icon: Bot
+    },
+    {
+        title: "Sistemas Cloud",
+        href: "#servicios",
+        description: "Infraestructura propia en tu nube de Google.",
+        icon: Terminal
+    }
+]
+
+const modules = [
+    {
+        title: "Vector DB",
+        href: "#servicios",
+        description: "Gestión de embeddings para IA.",
+        icon: Database
+    },
+    {
+        title: "Custom CRM",
+        href: "#servicios",
+        description: "Control total de tus clientes.",
+        icon: Users
+    },
+    {
+        title: "Realtime API",
+        href: "#servicios",
+        description: "Sincronización instantánea.",
+        icon: Sparkles
+    }
 ]
 
 export default function SiteHeader() {
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-slate-200/70 bg-white/70 backdrop-blur">
-            <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+        <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur-md">
+            <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
 
-                {/* LOGO */}
-                <a href="#top" className="flex items-center gap-2">
-                    <div className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900 text-white">
-                        <span className="text-sm font-semibold">N</span>
-                    </div>
-                    <span className="text-base font-semibold text-slate-900">
-                        NexAI
-                    </span>
-                </a>
+                {/* LOGO & DESKTOP NAV */}
+                <div className="flex items-center gap-10">
+                    <a href="/" className="flex items-center gap-2 transition-opacity hover:opacity-90">
+                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm">
+                            <span className="text-sm font-bold">N</span>
+                        </div>
+                        <span className="text-lg font-bold tracking-tight text-foreground">
+                            NexAI
+                        </span>
+                    </a>
 
-                {/* NAV DESKTOP */}
-                <nav className="hidden items-center gap-1 md:flex">
-                    {nav.map((item) => (
-                        <a
-                            key={item.href}
-                            href={item.href}
-                            className="rounded-xl px-3 py-2 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-slate-900"
-                        >
-                            {item.label}
-                        </a>
-                    ))}
-                </nav>
+                    <nav className="hidden lg:flex">
+                        <NavigationMenu>
+                            <NavigationMenuList className="gap-1">
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger className="text-muted-foreground hover:text-foreground border-none bg-transparent">
+                                        Soluciones
+                                    </NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <div className="flex w-[600px] gap-3 p-4 md:w-[700px] lg:w-[850px]">
+                                            <div className="flex-1 border-r border-border pr-4">
+                                                <h4 className="mb-4 px-3 text-[11px] font-black uppercase tracking-widest text-muted-foreground">Core Services</h4>
+                                                <ul className="grid gap-3">
+                                                    {solutions.map((item) => (
+                                                        <ListItem
+                                                            key={item.title}
+                                                            title={item.title}
+                                                            href={item.href}
+                                                            icon={item.icon}
+                                                        >
+                                                            {item.description}
+                                                        </ListItem>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                            <div className="w-[300px] pl-4">
+                                                <h4 className="mb-4 px-3 text-[11px] font-black uppercase tracking-widest text-muted-foreground">Modules</h4>
+                                                <ul className="grid gap-3">
+                                                    {modules.map((item) => (
+                                                        <ListItem
+                                                            key={item.title}
+                                                            title={item.title}
+                                                            href={item.href}
+                                                            icon={item.icon}
+                                                            small
+                                                        >
+                                                            {item.description}
+                                                        </ListItem>
+                                                    ))}
+                                                    <div className="mt-4 pt-4 border-t border-border">
+                                                        <ListItem
+                                                            title="Ver todas las features"
+                                                            href="#servicios"
+                                                            icon={Sparkles}
+                                                            className="bg-muted/50"
+                                                        >
+                                                            Explora todo el ecosistema NexAI.
+                                                        </ListItem>
+                                                    </div>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger className="text-accent hover:text-accent font-bold border-none bg-transparent">
+                                        Agentes IA
+                                    </NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                                            <ListItem title="Soporte 24/7" href="#evaluador-ia" icon={MessageSquare}>
+                                                Automatiza la atención al cliente sin fricciones.
+                                            </ListItem>
+                                            <ListItem title="Análisis Pro" href="#evaluador-ia" icon={BarChart3}>
+                                                IA que procesa tus métricas críticas.
+                                            </ListItem>
+                                        </ul>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger className="text-muted-foreground hover:text-foreground">
+                                        Industrias
+                                    </NavigationMenuTrigger>
+                                    <NavigationMenuContent>
+                                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px]">
+                                            <ListItem title="E-commerce" href="#servicios">
+                                                Escalabilidad y logística inteligente.
+                                            </ListItem>
+                                            <ListItem title="SaaS" href="#servicios">
+                                                Infraestructura propia para startups.
+                                            </ListItem>
+                                        </ul>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+
+                                <NavigationMenuItem>
+                                    <a href="#precios" className={cn(navigationMenuTriggerStyle(), "text-slate-600 hover:text-slate-900")}>
+                                        Precios
+                                    </a>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem>
+                                    <a href="#docs" className={cn(navigationMenuTriggerStyle(), "text-slate-600 hover:text-slate-900")}>
+                                        Docs
+                                    </a>
+                                </NavigationMenuItem>
+                                <NavigationMenuItem>
+                                    <a href="#blog" className={cn(navigationMenuTriggerStyle(), "text-slate-600 hover:text-slate-900")}>
+                                        Blog
+                                    </a>
+                                </NavigationMenuItem>
+                            </NavigationMenuList>
+                        </NavigationMenu>
+                    </nav>
+                </div>
 
                 {/* ACCIONES DESKTOP */}
-                <div className="hidden items-center gap-2 md:flex">
-                    <Button variant="ghost" className="rounded-xl font-medium text-slate-600 hover:text-slate-900">
+                <div className="hidden lg:flex items-center gap-3">
+                    <a
+                        href="https://github.com"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                    >
+                        <Github size={18} />
+                        <span className="text-xs text-muted-foreground/80">97.6k</span>
+                    </a>
+
+                    <Button variant="ghost" className="h-9 px-4 text-sm font-semibold text-muted-foreground hover:text-foreground">
                         Login
                     </Button>
 
-                    <Button className="rounded-xl bg-slate-900 text-white hover:bg-slate-800">
-                        Contactar
-                        <ArrowRight className="ml-2 h-4 w-4" />
+                    <Button variant="default" size="sm" className="h-9 rounded-lg font-bold shadow-primary/10 hover:shadow-primary/20">
+                        Comenzar
                     </Button>
                 </div>
 
-                {/* MOBILE */}
-                <div className="flex items-center gap-2 md:hidden">
-                    <Button size="sm" className="h-10 rounded-xl px-4 bg-slate-900 text-white hover:bg-slate-800">
-                        Contactar
+                {/* MOBILE NAV */}
+                <div className="flex items-center gap-3 lg:hidden">
+                    <Button variant="default" size="sm" className="h-9 px-4 rounded-lg">
+                        Comenzar
                     </Button>
-
                     <Sheet>
                         <SheetTrigger asChild>
-                            <Button
-                                variant="outline"
-                                size="icon"
-                                className="h-10 w-10 rounded-xl border-slate-200"
-                            >
-                                <Menu className="h-5 w-5 text-slate-600" />
+                            <Button variant="ghost" size="icon" className="h-9 w-9">
+                                <Menu className="h-5 w-5" />
                             </Button>
                         </SheetTrigger>
-
-                        <SheetContent side="right" className="w-[320px] p-0">
-                            <div className="p-5">
+                        <SheetContent side="right" className="w-[300px] p-0">
+                            <div className="flex flex-col h-full p-6">
                                 <SheetHeader>
-                                    <SheetTitle className="text-left font-bold text-slate-900">NexAI</SheetTitle>
+                                    <SheetTitle className="text-left font-bold text-slate-900">NexAI Menú</SheetTitle>
                                 </SheetHeader>
-
-                                <div className="mt-6 grid gap-2">
-                                    {nav.map((item) => (
-                                        <a
-                                            key={item.href}
-                                            href={item.href}
-                                            className="rounded-xl px-3 py-3 text-sm font-medium text-slate-700 hover:bg-slate-100 transition-colors"
-                                        >
-                                            {item.label}
-                                        </a>
-                                    ))}
+                                <div className="mt-8 flex flex-col gap-4 overflow-y-auto">
+                                    <MobileNavLink href="#soluciones">Soluciones</MobileNavLink>
+                                    <MobileNavLink href="#ia" className="text-emerald-600 font-bold">Agentes IA</MobileNavLink>
+                                    <MobileNavLink href="#industrias">Industrias</MobileNavLink>
+                                    <MobileNavLink href="#precios">Precios</MobileNavLink>
+                                    <MobileNavLink href="#docs">Docs</MobileNavLink>
+                                    <MobileNavLink href="#blog">Blog</MobileNavLink>
                                 </div>
-
-                                <div className="mt-6 grid gap-2 border-t border-slate-100 pt-6">
-                                    <Button variant="outline" className="h-11 rounded-xl border-slate-200 text-slate-700">
-                                        Login
-                                    </Button>
-                                    <Button className="h-11 rounded-xl bg-slate-900 text-white hover:bg-slate-800">
-                                        Contactar
+                                <div className="mt-auto pt-6 border-t border-border flex flex-col gap-3">
+                                    <Button variant="outline" className="w-full">Login</Button>
+                                    <Button variant="default" className="w-full">
+                                        Comenzar Ahora
                                         <ArrowRight className="ml-2 h-4 w-4" />
                                     </Button>
                                 </div>
-
-                                <p className="mt-6 text-[11px] leading-relaxed text-slate-500">
-                                    Menú optimizado para móvil. Simple, rápido y sin ruido visual.
-                                </p>
                             </div>
                         </SheetContent>
                     </Sheet>
                 </div>
             </div>
         </header>
+    )
+}
+
+const ListItem = React.forwardRef<
+    React.ElementRef<"a">,
+    React.ComponentPropsWithoutRef<"a"> & { icon?: any, small?: boolean }
+>(({ className, title, children, icon: Icon, small, ...props }, ref) => {
+    return (
+        <li>
+            <NavigationMenuLink asChild>
+                <a
+                    ref={ref}
+                    className={cn(
+                        "flex select-none items-center gap-4 rounded-xl p-3 leading-none no-underline outline-none transition-all duration-300 hover:bg-muted/50 hover:text-foreground group",
+                        className
+                    )}
+                    {...props}
+                >
+                    {Icon && (
+                        <div className={cn(
+                            "flex shrink-0 items-center justify-center rounded-xl border border-border bg-card shadow-sm transition-colors group-hover:border-accent/50",
+                            small ? "h-9 w-9" : "h-12 w-12"
+                        )}>
+                            <Icon className={cn("text-muted-foreground transition-colors group-hover:text-foreground", small ? "h-4 w-4" : "h-6 w-6")} />
+                        </div>
+                    )}
+                    <div className="flex flex-col gap-1">
+                        <div className="text-sm font-bold leading-none tracking-tight text-foreground">{title}</div>
+                        <p className="line-clamp-2 text-xs leading-snug text-muted-foreground font-medium opacity-80">
+                            {children}
+                        </p>
+                    </div>
+                </a>
+            </NavigationMenuLink>
+        </li>
+    )
+})
+ListItem.displayName = "ListItem"
+
+function MobileNavLink({ href, children, className }: { href: string, children: React.ReactNode, className?: string }) {
+    return (
+        <a
+            href={href}
+            className={cn("text-lg font-medium text-slate-600 transition-colors hover:text-slate-900", className)}
+        >
+            {children}
+        </a>
     )
 }

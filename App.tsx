@@ -1,6 +1,7 @@
 import React from 'react';
 import SiteHeader from './components/SiteHeader';
 import { Hero } from './components/Hero';
+import { TrustSection } from './components/TrustSection';
 import { Services } from './components/Services';
 import { EnterpriseDashboard } from './components/EnterpriseDashboard';
 import { AutomationPlayground } from './components/AutomationPlayground';
@@ -16,6 +17,7 @@ function App() {
       <SiteHeader />
       <main className="flex-grow">
         <Hero />
+        <TrustSection />
         <Services />
         <EnterpriseDashboard />
         <AutomationPlayground />
