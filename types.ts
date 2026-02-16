@@ -17,14 +17,7 @@ export interface MethodologyStep {
   id: string;
   title: string;
   content: string;
-}
-
-export interface TestimonialItem {
-  quote: string;
-  author: string;
-  role: string;
-  company: string;
-  metric: string;
+  icon: LucideIcon;
 }
 
 export interface EngagementModel {

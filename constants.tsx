@@ -2,8 +2,11 @@ import {
   GitBranch,
   Terminal,
   Database,
+  Search,
+  Layout,
+  Rocket
 } from 'lucide-react';
-import { NavItem, ServiceItem, MethodologyStep, TestimonialItem, EngagementModel, PricingPlan } from './types';
+import { NavItem, ServiceItem, MethodologyStep, EngagementModel, PricingPlan } from './types';
 
 export const APP_NAME = "NexAI";
 
@@ -49,34 +52,20 @@ export const METHODOLOGY: MethodologyStep[] = [
   {
     id: "Fase 1",
     title: "Discovery & Diagnóstico",
-    content: "No escribimos una sola línea de código sin entender tu negocio. Realizamos sesiones de inmersión con tus equipos para mapear procesos y dolores operativos."
+    content: "No escribimos una sola línea de código sin entender tu negocio. Realizamos sesiones de inmersión con tus equipos para mapear procesos y dolores operativos.",
+    icon: Search
   },
   {
     id: "Fase 2",
     title: "Arquitectura & Prototipado",
-    content: "Diseñamos la solución técnica y validamos la viabilidad con pruebas de concepto (PoC) rápidas. Aseguramos que la solución escale antes de implementarla."
+    content: "Diseñamos la solución técnica y validamos la viabilidad con pruebas de concepto (PoC) rápidas. Aseguramos que la solución escale antes de implementarla.",
+    icon: Layout
   },
   {
     id: "Fase 3",
     title: "Implementación & Transferencia",
-    content: "Desarrollo iterativo con entregables quincenales. Al finalizar, capacitamos a tu equipo y entregamos documentación exhaustiva para garantizar autonomía."
-  },
-];
-
-export const TESTIMONIALS: TestimonialItem[] = [
-  {
-    quote: "NexAI no solo nos entregó un software, rediseñaron cómo operamos. Su equipo técnico tiene un nivel de seniority que es difícil de encontrar.",
-    author: "Elena Vásquez",
-    role: "Directora de Operaciones",
-    company: "Logística Andina",
-    metric: "40% Ahorro Operativo"
-  },
-  {
-    quote: "Buscábamos expertos en IA, no generalistas. Entendieron nuestra necesidad de privacidad de datos y cumplimiento normativo desde el día uno.",
-    author: "Roberto Méndez",
-    role: "VP de Ingeniería",
-    company: "FinTech Corp",
-    metric: "ISO 27001 Compliant"
+    content: "Desarrollo iterativo con entregables quincenales. Al finalizar, capacitamos a tu equipo y entregamos documentación exhaustiva para garantizar autonomía.",
+    icon: Rocket
   },
 ];
 

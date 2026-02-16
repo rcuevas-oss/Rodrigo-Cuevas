@@ -6,7 +6,7 @@ import { Services } from './components/Services';
 import { EnterpriseDashboard } from './components/EnterpriseDashboard';
 import { AutomationPlayground } from './components/AutomationPlayground';
 import { Features } from './components/Features';
-import { Testimonials } from './components/Testimonials';
+import { TechStack } from './components/TechStack';
 import { Engagement } from './components/Engagement';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
@@ -22,7 +22,7 @@ function App() {
         <EnterpriseDashboard />
         <AutomationPlayground />
         <Features />
-        <Testimonials />
+        <TechStack />
         <Engagement />
         <Contact />
       </main>

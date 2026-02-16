@@ -170,17 +170,17 @@ export default function SiteHeader() {
                                 </NavigationMenuItem>
 
                                 <NavigationMenuItem>
-                                    <a href="#precios" className={cn(navigationMenuTriggerStyle(), "text-slate-600 hover:text-slate-900")}>
+                                    <a href="#precios" className={cn(navigationMenuTriggerStyle(), "text-muted-foreground hover:text-foreground bg-transparent")}>
                                         Precios
                                     </a>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
-                                    <a href="#docs" className={cn(navigationMenuTriggerStyle(), "text-slate-600 hover:text-slate-900")}>
-                                        Docs
+                                    <a href="#metodologia" className={cn(navigationMenuTriggerStyle(), "text-muted-foreground hover:text-foreground bg-transparent")}>
+                                        Tecnología
                                     </a>
                                 </NavigationMenuItem>
                                 <NavigationMenuItem>
-                                    <a href="#blog" className={cn(navigationMenuTriggerStyle(), "text-slate-600 hover:text-slate-900")}>
+                                    <a href="#blog" className={cn(navigationMenuTriggerStyle(), "text-muted-foreground hover:text-foreground bg-transparent")}>
                                         Blog
                                     </a>
                                 </NavigationMenuItem>
@@ -227,11 +227,11 @@ export default function SiteHeader() {
                                     <SheetTitle className="text-left font-bold text-slate-900">NexAI Menú</SheetTitle>
                                 </SheetHeader>
                                 <div className="mt-8 flex flex-col gap-4 overflow-y-auto">
-                                    <MobileNavLink href="#soluciones">Soluciones</MobileNavLink>
-                                    <MobileNavLink href="#ia" className="text-emerald-600 font-bold">Agentes IA</MobileNavLink>
+                                    <MobileNavLink href="#servicios">Soluciones</MobileNavLink>
+                                    <MobileNavLink href="#ia" className="text-primary font-bold">Agentes IA</MobileNavLink>
                                     <MobileNavLink href="#industrias">Industrias</MobileNavLink>
                                     <MobileNavLink href="#precios">Precios</MobileNavLink>
-                                    <MobileNavLink href="#docs">Docs</MobileNavLink>
+                                    <MobileNavLink href="#metodologia">Tecnología</MobileNavLink>
                                     <MobileNavLink href="#blog">Blog</MobileNavLink>
                                 </div>
                                 <div className="mt-auto pt-6 border-t border-border flex flex-col gap-3">
@@ -290,7 +290,7 @@ function MobileNavLink({ href, children, className }: { href: string, children: 
     return (
         <a
             href={href}
-            className={cn("text-lg font-medium text-slate-600 transition-colors hover:text-slate-900", className)}
+            className={cn("text-lg font-medium text-muted-foreground transition-colors hover:text-foreground", className)}
         >
             {children}
         </a>
