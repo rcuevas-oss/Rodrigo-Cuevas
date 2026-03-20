@@ -17,7 +17,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "./ui/sheet"
-import { Menu, Github, ArrowRight, Bot, Zap, Code, Terminal, Sparkles, BookOpen, Database, Users, BarChart3, MessageSquare, ShoppingCart, Cloud } from "lucide-react"
+import { Menu, Github, ArrowRight, Bot, Zap, Code, Terminal, Sparkles, BookOpen, Database, Users, BarChart3, MessageSquare, ShoppingCart, Cloud, Palette } from "lucide-react"
 
 const solutions = [
     {
@@ -67,7 +67,12 @@ const modules = [
     }
 ]
 
-export default function SiteHeader() {
+interface SiteHeaderProps {
+    theme: 'default' | 'emma';
+    onToggleTheme: () => void;
+}
+
+export default function SiteHeader({ theme, onToggleTheme }: SiteHeaderProps) {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur-md">
             <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
@@ -191,6 +196,16 @@ export default function SiteHeader() {
 
                 {/* ACCIONES DESKTOP */}
                 <div className="hidden lg:flex items-center gap-3">
+                    <Button 
+                        variant="ghost" 
+                        size="sm" 
+                        onClick={onToggleTheme}
+                        className="h-9 px-4 flex items-center gap-2 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all rounded-lg"
+                    >
+                        <Palette size={16} className={cn("transition-colors", theme === 'emma' ? "text-primary" : "text-muted-foreground")} />
+                        <span className="text-xs font-semibold">{theme === 'default' ? 'Modo Emma' : 'Modo Original'}</span>
+                    </Button>
+
                     <a
                         href="https://github.com"
                         target="_blank"
@@ -211,9 +226,15 @@ export default function SiteHeader() {
                 </div>
 
                 {/* MOBILE NAV */}
-                <div className="flex items-center gap-3 lg:hidden">
-                    <Button variant="default" size="sm" className="h-9 px-4 rounded-lg">
-                        Comenzar
+                <div className="flex items-center gap-2 lg:hidden">
+                    <Button 
+                        variant="ghost" 
+                        size="icon" 
+                        onClick={onToggleTheme}
+                        className="h-9 w-9 rounded-lg text-muted-foreground hover:text-primary transition-colors"
+                        title={theme === 'default' ? "Modo Emma" : "Modo Original"}
+                    >
+                        <Palette size={20} className={cn(theme === 'emma' ? "text-primary animate-pulse" : "")} />
                     </Button>
                     <Sheet>
                         <SheetTrigger asChild>
