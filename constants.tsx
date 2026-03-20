@@ -27,25 +27,25 @@ export const HERO_CONTENT = {
 
 export const SERVICES: ServiceItem[] = [
   {
-    title: "Consultoría & Estrategia",
-    description: "Analizamos tu arquitectura actual para identificar oportunidades de alto impacto. Entregamos un roadmap técnico claro y un análisis de ROI proyectado.",
+    title: "Páginas web para mostrar mejor tu negocio",
+    description: "Diseñamos sitios web claros, profesionales y pensados para generar confianza, mostrar bien lo que haces y ayudarte a captar más oportunidades.",
     icon: GitBranch,
     color: "#8b5cf6",
-    tags: ["Auditoría Técnica", "Diseño de Arquitectura", "Análisis ROI"]
+    tags: ["Presencia Profesional", "Sitios Web", "Más Confianza"]
   },
   {
-    title: "Desarrollo de Soluciones",
-    description: "Ingeniería de software a medida para integrar modelos de IA (LLMs) y automatizaciones complejas directamente en tu stack tecnológico existente.",
+    title: "Automatizaciones para ahorrar tiempo",
+    description: "Reducimos tareas manuales, ordenamos procesos repetitivos y te ayudamos a trabajar con menos fricción en el día a día.",
     icon: Terminal,
     color: "#3b82f6",
-    tags: ["Desarrollo Python/TS", "Integración API", "Agentes IA"]
+    tags: ["Menos Tareas Manuales", "Más Orden", "Procesos Simples"]
   },
   {
-    title: "Ingeniería de Datos",
-    description: "Preparamos y estructuramos tus datos empresariales para que sean consumibles por sistemas inteligentes. ETLs robustos y gobernanza de datos.",
+    title: "Sistemas a medida para tu operación",
+    description: "Creamos herramientas internas, formularios, bases de datos y soluciones adaptadas a la forma en que realmente funciona tu negocio.",
     icon: Database,
     color: "#10b981",
-    tags: ["Data Warehousing", "Limpieza de Datos", "Vector Stores"]
+    tags: ["Software a Medida", "Bases de Datos", "Orden Operativo"]
   },
 ];
 
