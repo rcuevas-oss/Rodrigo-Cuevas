@@ -17,11 +17,12 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const HERO_CONTENT = {
-  badge: "Consultora Especializada en IA & Procesos",
-  title: "Tu socio estratégico para la transformación inteligente.",
-  subtitle: "Diseñamos e implementamos ecosistemas de automatización a medida para empresas B2B. Sin plataformas genéricas, solo soluciones que se adaptan a tu operación.",
-  ctaPrimary: "Agendar Consultoría",
-  ctaSecondary: "Ver Casos de Éxito",
+  badge: "Páginas web, automatización y sistemas a medida",
+  title: "Soluciones digitales para negocios que ya están creciendo",
+  subtitle: "Creamos páginas web, automatizaciones y software a medida para pymes, emprendedores y negocios que necesitan vender mejor, ordenar procesos y ahorrar tiempo.",
+  ctaPrimary: "Solicitar diagnóstico",
+  ctaSecondary: "Ver soluciones",
+};
 };
 
 export const SERVICES: ServiceItem[] = [
