@@ -23,7 +23,6 @@ export const HERO_CONTENT = {
   ctaPrimary: "Solicitar diagnóstico",
   ctaSecondary: "Ver soluciones",
 };
-};
 
 export const SERVICES: ServiceItem[] = [
   {
