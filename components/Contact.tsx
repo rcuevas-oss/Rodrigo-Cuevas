@@ -8,14 +8,14 @@ export const Contact: React.FC = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <FadeIn>
           <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-6">
-            Empieza a automatizar hoy.
+            Cuéntanos qué necesitas resolver
           </h2>
           <p className="text-muted-foreground text-lg mb-8 max-w-xl mx-auto">
-            Únete a los equipos de ingeniería que están reduciendo su carga operativa con {`NexAI`}.
+            Si tu negocio necesita una página web, una automatización, un sistema interno o una solución a medida, conversemos. Te ayudamos a encontrar una opción clara, útil y ajustada a tu etapa actual.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-             <Button size="lg">Comenzar gratis</Button>
-             <Button variant="outline" size="lg">Contactar Ventas</Button>
+            <Button size="lg">Solicitar diagnóstico</Button>
+            <Button variant="outline" size="lg">Hablar por WhatsApp</Button>
           </div>
         </FadeIn>
       </div>
