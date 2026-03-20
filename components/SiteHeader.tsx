@@ -17,7 +17,7 @@ import {
     SheetTitle,
     SheetTrigger,
 } from "./ui/sheet"
-import { Menu, Github, ArrowRight, Bot, Zap, Code, Terminal, Sparkles, BookOpen, Database, Users, BarChart3, MessageSquare } from "lucide-react"
+import { Menu, Github, ArrowRight, Bot, Zap, Code, Terminal, Sparkles, BookOpen, Database, Users, BarChart3, MessageSquare, ShoppingCart, Cloud } from "lucide-react"
 
 const solutions = [
     {
@@ -159,10 +159,10 @@ export default function SiteHeader() {
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent>
                                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px]">
-                                            <ListItem title="E-commerce" href="#servicios">
+                                            <ListItem title="E-commerce" href="#servicios" icon={ShoppingCart}>
                                                 Escalabilidad y logística inteligente.
                                             </ListItem>
-                                            <ListItem title="SaaS" href="#servicios">
+                                            <ListItem title="SaaS" href="#servicios" icon={Cloud}>
                                                 Infraestructura propia para startups.
                                             </ListItem>
                                         </ul>
@@ -224,15 +224,15 @@ export default function SiteHeader() {
                         <SheetContent side="right" className="w-[300px] p-0">
                             <div className="flex flex-col h-full p-6">
                                 <SheetHeader>
-                                    <SheetTitle className="text-left font-bold text-slate-900">NexAI Menú</SheetTitle>
+                                    <SheetTitle className="text-left font-bold text-foreground">NexAI Menú</SheetTitle>
                                 </SheetHeader>
-                                <div className="mt-8 flex flex-col gap-4 overflow-y-auto">
-                                    <MobileNavLink href="#servicios">Soluciones</MobileNavLink>
-                                    <MobileNavLink href="#ia" className="text-primary font-bold">Agentes IA</MobileNavLink>
-                                    <MobileNavLink href="#industrias">Industrias</MobileNavLink>
-                                    <MobileNavLink href="#precios">Precios</MobileNavLink>
-                                    <MobileNavLink href="#metodologia">Tecnología</MobileNavLink>
-                                    <MobileNavLink href="#blog">Blog</MobileNavLink>
+                                <div className="mt-8 flex flex-col gap-4 overflow-y-auto pl-2">
+                                    <MobileNavLink href="#servicios" icon={Zap}>Soluciones</MobileNavLink>
+                                    <MobileNavLink href="#ia" className="text-primary font-bold" icon={Bot}>Agentes IA</MobileNavLink>
+                                    <MobileNavLink href="#industrias" icon={Database}>Industrias</MobileNavLink>
+                                    <MobileNavLink href="#precios" icon={BarChart3}>Precios</MobileNavLink>
+                                    <MobileNavLink href="#metodologia" icon={Code}>Tecnología</MobileNavLink>
+                                    <MobileNavLink href="#blog" icon={BookOpen}>Blog</MobileNavLink>
                                 </div>
                                 <div className="mt-auto pt-6 border-t border-border flex flex-col gap-3">
                                     <Button variant="outline" className="w-full">Login</Button>
@@ -267,10 +267,10 @@ const ListItem = React.forwardRef<
                 >
                     {Icon && (
                         <div className={cn(
-                            "flex shrink-0 items-center justify-center rounded-xl border border-border bg-card shadow-sm transition-colors group-hover:border-accent/50",
+                            "flex shrink-0 items-center justify-center rounded-xl border border-border bg-primary/10 shadow-sm transition-colors group-hover:border-primary/50",
                             small ? "h-9 w-9" : "h-12 w-12"
                         )}>
-                            <Icon className={cn("text-muted-foreground transition-colors group-hover:text-foreground", small ? "h-4 w-4" : "h-6 w-6")} />
+                            <Icon className={cn("text-primary transition-colors", small ? "h-4 w-4" : "h-6 w-6")} />
                         </div>
                     )}
                     <div className="flex flex-col gap-1">
@@ -286,12 +286,17 @@ const ListItem = React.forwardRef<
 })
 ListItem.displayName = "ListItem"
 
-function MobileNavLink({ href, children, className }: { href: string, children: React.ReactNode, className?: string }) {
+function MobileNavLink({ href, children, className, icon: Icon }: { href: string, children: React.ReactNode, className?: string, icon?: any }) {
     return (
         <a
             href={href}
-            className={cn("text-lg font-medium text-muted-foreground transition-colors hover:text-foreground", className)}
+            className={cn("flex items-center gap-4 text-lg font-medium text-muted-foreground transition-colors hover:text-foreground", className)}
         >
+            {Icon && (
+                <div className="flex shrink-0 items-center justify-center h-10 w-10 rounded-xl border border-border bg-primary/10 shadow-sm transition-colors">
+                    <Icon className="h-5 w-5 text-primary transition-colors" />
+                </div>
+            )}
             {children}
         </a>
     )

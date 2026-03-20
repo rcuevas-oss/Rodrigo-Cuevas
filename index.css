@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -52,4 +54,59 @@
   background-size: 40px 40px;
   mask-image: linear-gradient(to bottom, transparent, 10%, black, 90%, transparent);
   -webkit-mask-image: linear-gradient(to bottom, transparent, 10%, black, 90%, transparent);
+}
+
+/* Emma IA Theme Overrides */
+.theme-emma {
+  /* Void => #06060A */
+  --background: 240 25% 3.1%;
+  /* Ghost White => #F4F3FF */
+  --foreground: 245 100% 98%;
+  
+  /* Surface => #0F0F1A */
+  --card: 240 27% 8%;
+  --card-foreground: 245 100% 98%;
+
+  --popover: 240 27% 8%;
+  --popover-foreground: 245 100% 98%;
+
+  /* Flux Green => #AAFF00 */
+  --primary: 80 100% 50%;
+  --primary-foreground: 240 25% 3.1%;
+
+  /* Void Violet => #7C3AFF */
+  --secondary: 260 100% 61%;
+  --secondary-foreground: 245 100% 98%;
+
+  /* Mist => #6B6A85 for muted text */
+  --muted: 240 27% 8%;
+  --muted-foreground: 242 11% 47%;
+
+  --accent: 260 100% 61%;
+  --accent-foreground: 245 100% 98%;
+
+  /* Signal => #FF4D6D */
+  --destructive: 349 100% 65%;
+  --destructive-foreground: 245 100% 98%;
+
+  /* Wire => #1C1C2E */
+  --border: 240 24% 14.5%;
+  --input: 240 24% 14.5%;
+  --ring: 80 100% 50%;
+
+  --radius: 0.5rem;
+}
+
+.theme-emma body, .theme-emma {
+  font-family: 'Space Grotesk', sans-serif !important;
+}
+
+.theme-emma h1, .theme-emma h2, .theme-emma h3, .theme-emma h4, .theme-emma h5, .theme-emma h6, .theme-emma .font-bold {
+  font-family: 'Space Grotesk', sans-serif !important;
+  letter-spacing: -0.02em;
+}
+
+/* Tipografía Técnica para insignias, código, etc. */
+.theme-emma code, .theme-emma pre, .theme-emma .font-mono, .theme-emma .inline-flex {
+  font-family: 'Space Mono', monospace !important;
 }

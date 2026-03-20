@@ -50,9 +50,9 @@ const CustomNode = ({ data }: NodeProps) => {
     const isRunning = data.status === 'running';
 
     const statusStyles = {
-        running: "bg-violet-50 text-violet-600 border-violet-100 shadow-[0_0_20px_rgba(139,92,246,0.15)]",
-        completed: "bg-green-50 text-green-600 border-green-100",
-        queued: "bg-slate-50 text-slate-400 border-slate-200"
+        running: "bg-primary/20 text-primary border-primary/30 shadow-[0_0_20px_rgba(var(--primary),0.15)]",
+        completed: "bg-green-500/20 text-green-500 border-green-500/30",
+        queued: "bg-muted text-muted-foreground border-border"
     };
 
     const statusLabel = {
@@ -62,18 +62,18 @@ const CustomNode = ({ data }: NodeProps) => {
     };
 
     return (
-        <Card className={`relative ${isMobile ? 'min-w-[155px]' : 'min-w-[200px]'} border-slate-200/80 shadow-sm rounded-2xl p-4 bg-white/95 backdrop-blur-sm transition-all duration-500 ${isRunning ? 'ring-2 ring-violet-500/20 scale-[1.02]' : ''}`}>
+        <Card className={`relative ${isMobile ? 'min-w-[155px]' : 'min-w-[200px]'} border-border/80 shadow-sm rounded-2xl p-4 bg-card/95 backdrop-blur-sm transition-all duration-500 ${isRunning ? 'ring-2 ring-primary/50 scale-[1.02]' : ''}`}>
             <Handle
                 type="target"
                 position={data.targetPos || Position.Left}
-                className="!w-2 !h-2 !bg-slate-300 ring-4 ring-white"
+                className="!w-2 !h-2 !bg-muted-foreground ring-4 ring-card"
             />
 
             <div className="flex items-start gap-4">
                 <div
                     className="p-2.5 rounded-xl transition-all duration-500 flex items-center justify-center shadow-sm"
                     style={{
-                        backgroundColor: isRunning ? data.color : `${data.color}15`,
+                        backgroundColor: isRunning ? data.color : `${data.color}25`,
                         color: isRunning ? '#ffffff' : data.color
                     }}
                 >
@@ -81,7 +81,7 @@ const CustomNode = ({ data }: NodeProps) => {
                 </div>
                 <div className="flex-1 overflow-hidden">
                     <div className="flex items-center justify-between mb-1.5">
-                        <h4 className={`${isMobile ? 'text-[11px]' : 'text-xs'} font-bold text-slate-900 leading-none truncate`}>
+                        <h4 className={`${isMobile ? 'text-[11px]' : 'text-xs'} font-bold text-card-foreground leading-none truncate`}>
                             {data.title}
                         </h4>
                     </div>
@@ -96,12 +96,12 @@ const CustomNode = ({ data }: NodeProps) => {
 
             {isRunning && (
                 <motion.div
-                    className="absolute -bottom-[2px] left-4 right-4 h-[3px] bg-slate-100 rounded-full overflow-hidden"
+                    className="absolute -bottom-[2px] left-4 right-4 h-[3px] bg-muted rounded-full overflow-hidden"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                 >
                     <motion.div
-                        className="h-full bg-violet-500"
+                        className="h-full bg-primary"
                         initial={{ width: "0%" }}
                         animate={{ width: "100%" }}
                         transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
@@ -112,7 +112,7 @@ const CustomNode = ({ data }: NodeProps) => {
             <Handle
                 type="source"
                 position={data.sourcePos || Position.Right}
-                className="!w-2 !h-2 !bg-slate-300 ring-4 ring-white"
+                className="!w-2 !h-2 !bg-muted-foreground ring-4 ring-card"
             />
         </Card>
     );
@@ -229,11 +229,11 @@ export const AutomationPlayground: React.FC = () => {
     };
 
     return (
-        <section id="evaluador-ia" className="relative w-full overflow-hidden py-16 md:py-24 bg-slate-50/30 border-y border-slate-100">
+        <section id="evaluador-ia" className="relative w-full overflow-hidden py-16 md:py-24 bg-background border-y border-border">
             {/* Background Aura & Floating Icons */}
             <div className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center opacity-40 overflow-hidden">
-                <div className="h-[600px] w-[600px] rounded-full bg-violet-100 blur-[130px]" />
-                <div className="h-[400px] w-[400px] rounded-full bg-blue-50 blur-[100px] -ml-40" />
+                <div className="h-[600px] w-[600px] rounded-full bg-primary/20 blur-[130px]" />
+                <div className="h-[400px] w-[400px] rounded-full bg-secondary/20 blur-[100px] -ml-40" />
 
                 <div className="absolute top-[10%] left-[15%] opacity-20 blur-[1px] transform rotate-12" style={{ color: '#D14836' }}>
                     <SiGmail size={48} />
@@ -251,14 +251,14 @@ export const AutomationPlayground: React.FC = () => {
 
             <div className="mx-auto max-w-6xl px-4 relative z-10">
                 <div className="text-center mb-10">
-                    <Badge variant="outline" className="mb-4 bg-white/80 border-slate-200 text-violet-600 font-bold px-4 py-1 rounded-full shadow-sm">
-                        <Play className="w-3 h-3 mr-2 fill-violet-600" />
+                    <Badge variant="outline" className="mb-4 bg-muted border-border text-primary font-bold px-4 py-1 rounded-full shadow-sm">
+                        <Play className="w-3 h-3 mr-2 fill-primary" />
                         NexAI Intelligence Flow
                     </Badge>
-                    <h2 className="text-3xl font-bold tracking-tighter text-slate-950 sm:text-4xl md:text-5xl mb-4">
-                        Flujo de automatización <span className="text-violet-600">Premium</span>
+                    <h2 className="text-3xl font-bold tracking-tighter text-foreground sm:text-4xl md:text-5xl mb-4">
+                        Flujo de automatización <span className="text-primary">Premium</span>
                     </h2>
-                    <p className="max-w-2xl mx-auto text-slate-600 text-lg font-medium opacity-80">
+                    <p className="max-w-2xl mx-auto text-muted-foreground text-lg font-medium opacity-80">
                         Visualiza cómo orquestamos 7 procesos críticos integrando las mejores herramientas.
                     </p>
                 </div>
@@ -271,32 +271,32 @@ export const AutomationPlayground: React.FC = () => {
                                 key={s}
                                 variant={currentScenario === s ? 'default' : 'outline'}
                                 onClick={() => setCurrentScenario(s)}
-                                className={`rounded-2xl px-6 md:px-10 h-11 md:h-14 truncate text-sm font-bold shadow-xl transition-all duration-300 ${currentScenario === s ? 'bg-slate-950 text-white ring-8 ring-slate-900/5' : 'bg-white border-slate-200 text-slate-600 hover:border-violet-300 hover:text-violet-600'}`}
+                                className={`rounded-2xl px-6 md:px-10 h-11 md:h-14 truncate text-sm font-bold shadow-xl transition-all duration-300 ${currentScenario === s ? 'bg-primary text-primary-foreground ring-8 ring-primary/10' : 'bg-card border-border text-muted-foreground hover:border-primary/50 hover:text-primary'}`}
                             >
                                 {s === 'whatsapp' ? 'Atención Cliente' : s === 'leads' ? 'Captación de Leads' : 'Gestión de Pedidos'}
                             </Button>
                         ))}
                     </div>
 
-                    <div className="w-full max-w-2xl bg-white/90 backdrop-blur-xl border border-slate-200/50 rounded-[2rem] py-4 px-8 flex items-center justify-between shadow-2xl shadow-slate-200/40">
+                    <div className="w-full max-w-2xl bg-card/90 backdrop-blur-xl border border-border rounded-[2rem] py-4 px-8 flex items-center justify-between shadow-2xl">
                         <div className="flex items-center gap-5">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-indigo-600 text-sm font-black text-white shadow-lg shadow-violet-200">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-primary text-sm font-black text-primary-foreground shadow-lg shadow-primary/20">
                                 {runningNode?.index || 1}
                             </div>
                             <div className="flex flex-col">
-                                <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest leading-none mb-1">Paso {runningNode?.index || 1} de 7</span>
-                                <span className="text-base md:text-lg font-bold text-slate-950">{runningNode?.title || 'Iniciando sistema'}</span>
+                                <span className="text-[10px] font-black text-muted-foreground uppercase tracking-widest leading-none mb-1">Paso {runningNode?.index || 1} de 7</span>
+                                <span className="text-base md:text-lg font-bold text-foreground">{runningNode?.title || 'Iniciando sistema'}</span>
                             </div>
                         </div>
                         <div className="hidden sm:flex items-center gap-2 min-w-[150px]">
                             {[1, 2, 3, 4, 5, 6, 7].map(i => (
-                                <div key={i} className={`h-2 flex-1 rounded-full transition-all duration-700 ${i <= (runningNode?.index || 1) ? 'bg-violet-600 shadow-[0_0_12px_rgba(139,92,246,0.5)]' : 'bg-slate-100'}`} />
+                                <div key={i} className={`h-2 flex-1 rounded-full transition-all duration-700 ${i <= (runningNode?.index || 1) ? 'bg-primary shadow-[0_0_12px_rgba(var(--primary),0.5)]' : 'bg-muted'}`} />
                             ))}
                         </div>
                     </div>
                 </div>
 
-                <div className="relative w-full h-[480px] md:h-[620px] bg-white/40 backdrop-blur-md rounded-[3rem] border border-slate-200/50 shadow-2xl shadow-slate-200/10 overflow-hidden ring-1 ring-black/5">
+                <div className="relative w-full h-[480px] md:h-[620px] bg-card/40 backdrop-blur-md rounded-[3rem] border border-border shadow-2xl overflow-hidden ring-1 ring-border">
                     <ReactFlowProvider>
                         <ReactFlow
                             nodes={nodes as Node[]}
@@ -316,14 +316,14 @@ export const AutomationPlayground: React.FC = () => {
                             maxZoom={1}
                             minZoom={0.1}
                         >
-                            <Background color="#cbd5e1" gap={32} size={1.5} variant={"dots" as any} className="opacity-20" />
+                            <Background color="#cbd5e1" gap={32} size={1.5} variant={"dots" as any} className="opacity-10" />
                         </ReactFlow>
                     </ReactFlowProvider>
 
                     <div className="absolute top-8 right-8 pointer-events-none">
-                        <div className="bg-slate-950/95 backdrop-blur-xl border border-white/10 p-2.5 px-5 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.2)] flex items-center gap-3">
+                        <div className="bg-foreground/95 backdrop-blur-xl border border-background/10 p-2.5 px-5 rounded-full shadow-[0_20px_50px_rgba(0,0,0,0.2)] flex items-center gap-3">
                             <div className="h-2 w-2 rounded-full bg-green-400 animate-pulse shadow-[0_0_8px_rgba(74,222,128,0.8)]" />
-                            <span className="text-[11px] font-black text-white uppercase tracking-widest leading-none">Live Process Simulation</span>
+                            <span className="text-[11px] font-black text-background uppercase tracking-widest leading-none">Live Process Simulation</span>
                         </div>
                     </div>
 
@@ -333,16 +333,16 @@ export const AutomationPlayground: React.FC = () => {
                         animate={{ y: [0, 8, 0] }}
                         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                     >
-                        <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Sigue explorando</span>
-                        <div className="h-10 w-10 rounded-full border border-slate-200 bg-white/80 backdrop-blur-sm flex items-center justify-center text-slate-400 shadow-sm">
+                        <span className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em]">Sigue explorando</span>
+                        <div className="h-10 w-10 rounded-full border border-border bg-card/80 backdrop-blur-sm flex items-center justify-center text-muted-foreground shadow-sm">
                             <ChevronRight className="rotate-90" size={18} />
                         </div>
                     </motion.div>
                 </div>
 
                 <div className="mt-12 text-center">
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm text-slate-500 text-xs font-bold">
-                        <Clock className="w-4 h-4 text-violet-500" />
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border shadow-sm text-muted-foreground text-xs font-bold">
+                        <Clock className="w-4 h-4 text-primary" />
                         Velocidad de procesamiento: &lt; 0.3ms por nodo
                     </div>
                 </div>

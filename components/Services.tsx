@@ -22,10 +22,10 @@ export const Services: React.FC = () => {
               Especialidades NexAI
             </Badge>
             <h2 className="text-4xl font-bold tracking-tighter text-foreground sm:text-5xl md:text-6xl mb-6">
-              Servicios de <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">Alta Ingeniería</span>
+              Soluciones digitales <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">hechas a la medida</span> de tu negocio
             </h2>
             <p className="max-w-3xl mx-auto text-muted-foreground text-lg md:text-xl font-medium opacity-80 leading-relaxed">
-              No ofrecemos soluciones genéricas. Construimos infraestructura inteligente que se integra profundamente en tu flujo operativo.
+              Te ayudamos a ordenar, automatizar y mejorar tu operación con herramientas, sistemas y soluciones adaptadas a tu etapa actual.
             </p>
           </FadeIn>
         </div>
