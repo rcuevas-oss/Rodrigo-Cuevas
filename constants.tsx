@@ -1,7 +1,8 @@
 import {
-  GitBranch,
-  Terminal,
+  Globe,
+  Workflow,
   Database,
+  ClipboardList,
   Search,
   Layout,
   Rocket
@@ -12,97 +13,94 @@ export const APP_NAME = "NexAI";
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Servicios", href: "#servicios" },
-  { label: "Metodología", href: "#metodologia" },
-  { label: "Modelos", href: "#modelos" },
+  { label: "Casos de uso", href: "#casos-de-uso" },
+  { label: "Cómo trabajamos", href: "#como-trabajamos" },
+  { label: "Contacto", href: "#contacto" },
 ];
 
 export const HERO_CONTENT = {
-  badge: "Páginas web, automatización y sistemas a medida",
-  title: "Soluciones digitales para negocios que ya están creciendo",
-  subtitle: "Creamos páginas web, automatizaciones y software a medida para pymes, emprendedores y negocios que necesitan vender mejor, ordenar procesos y ahorrar tiempo.",
-  ctaPrimary: "Solicitar diagnóstico",
-  ctaSecondary: "Ver soluciones",
+  badge: "Sitios web, automatización, IA aplicada, sistemas internos y digitalización",
+  title: "Soluciones digitales para pymes que ya están creciendo",
+  subtitle: "Te ayudamos a vender mejor, ordenar procesos internos y digitalizar tu operación con automatización e IA aplicada a tu negocio y tu etapa actual.",
+  ctaPrimary: "Agendar diagnóstico",
+  ctaSecondary: "Ver ejemplos",
 };
 
 export const SERVICES: ServiceItem[] = [
   {
-    title: "Páginas web para mostrar mejor tu negocio",
-    description: "Diseñamos sitios web claros, profesionales y pensados para generar confianza, mostrar bien lo que haces y ayudarte a captar más oportunidades.",
-    icon: GitBranch,
+    title: "Sitios web y canales digitales",
+    description: "Diseñamos sitios web, landing pages y canales digitales pensados para mostrar mejor tu negocio y abrir nuevas oportunidades.",
+    icon: Globe,
     color: "#8b5cf6",
-    tags: ["Presencia Profesional", "Sitios Web", "Más Confianza"]
+    tags: ["Presencia Profesional", "Canales Digitales", "Más Oportunidades"]
   },
   {
-    title: "Automatizaciones para ahorrar tiempo",
-    description: "Reducimos tareas manuales, ordenamos procesos repetitivos y te ayudamos a trabajar con menos fricción en el día a día.",
-    icon: Terminal,
+    title: "Automatización e IA aplicada",
+    description: "Reducimos tareas manuales, conectamos herramientas y usamos IA para clasificar, responder, ordenar información y acelerar procesos repetitivos.",
+    icon: Workflow,
     color: "#3b82f6",
-    tags: ["Menos Tareas Manuales", "Más Orden", "Procesos Simples"]
+    tags: ["IA Aplicada", "Más Orden", "Respuestas Más Rápidas"]
   },
   {
-    title: "Sistemas a medida para tu operación",
-    description: "Creamos herramientas internas, formularios, bases de datos y soluciones adaptadas a la forma en que realmente funciona tu negocio.",
+    title: "Sistemas internos a medida",
+    description: "Creamos herramientas para recursos humanos, operación, seguimiento, formularios y control interno adaptadas a tu negocio.",
+    icon: ClipboardList,
+    color: "#f59e0b",
+    tags: ["RRHH", "Operación Interna", "Procesos Claros"]
+  },
+  {
+    title: "Digitalización y operación en la nube",
+    description: "Organizamos documentos, datos, formularios y procesos para que tu empresa deje atrás el desorden y trabaje con información centralizada.",
     icon: Database,
     color: "#10b981",
-    tags: ["Software a Medida", "Bases de Datos", "Orden Operativo"]
+    tags: ["Documentos", "Nube", "Orden Operativo"]
   },
 ];
 
 export const METHODOLOGY: MethodologyStep[] = [
   {
-    id: "Fase 1",
-    title: "Discovery & Diagnóstico",
-    content: "No escribimos una sola línea de código sin entender tu negocio. Realizamos sesiones de inmersión con tus equipos para mapear procesos y dolores operativos.",
+    id: "Paso 1",
+    title: "Diagnóstico",
+    content: "Primero entendemos cómo funciona tu negocio hoy, dónde se pierde tiempo y qué conviene resolver primero para generar impacto real.",
     icon: Search
   },
   {
-    id: "Fase 2",
-    title: "Arquitectura & Prototipado",
-    content: "Diseñamos la solución técnica y validamos la viabilidad con pruebas de concepto (PoC) rápidas. Aseguramos que la solución escale antes de implementarla.",
+    id: "Paso 2",
+    title: "Propuesta Clara",
+    content: "Te presentamos una solución aterrizada, con prioridades, alcance y una forma simple de avanzar sin sobredimensionar el proyecto.",
     icon: Layout
   },
   {
-    id: "Fase 3",
-    title: "Implementación & Transferencia",
-    content: "Desarrollo iterativo con entregables quincenales. Al finalizar, capacitamos a tu equipo y entregamos documentación exhaustiva para garantizar autonomía.",
+    id: "Paso 3",
+    title: "Implementación y Acompañamiento",
+    content: "Construimos, probamos, ajustamos y dejamos una solución útil para tu operación, con acompañamiento para que la puedas usar con confianza.",
     icon: Rocket
   },
 ];
 
 export const ENGAGEMENT_MODELS: EngagementModel[] = [
   {
-    name: "Proyecto Llave en Mano",
-    description: "Ideal para soluciones específicas con alcance definido.",
+    name: "Proyecto a Medida",
+    description: "Ideal para una web, tienda, automatización o sistema con objetivos y alcance definidos.",
     features: [
-      "Alcance y presupuesto cerrados",
-      "Cronograma de entrega garantizado",
-      "Documentación técnica completa",
-      "Garantía post-implementación"
+      "Diagnóstico inicial y propuesta clara",
+      "Alcance, tiempos y entregables definidos",
+      "Implementación enfocada en tu operación",
+      "Acompañamiento posterior a la entrega"
     ],
-    cta: "Cotizar Proyecto"
+    cta: "Solicitar propuesta"
   },
   {
-    name: "Staff Augmentation",
-    description: "Potencia tu equipo interno con nuestros ingenieros expertos.",
+    name: "Acompañamiento Continuo",
+    description: "Para negocios que quieren seguir mejorando procesos, herramientas y automatizaciones mes a mes.",
     features: [
-      "Ingenieros Senior en IA/Automatización",
-      "Integración total a tus ceremonias",
-      "Flexibilidad de dedicación (Part/Full)",
-      "Transferencia de conocimiento continua"
+      "Evolución continua de tu solución",
+      "Nuevas mejoras según prioridad del negocio",
+      "Soporte y ajustes sobre lo implementado",
+      "Visión estratégica para seguir creciendo"
     ],
-    cta: "Solicitar Perfiles",
+    cta: "Hablar sobre acompañamiento",
     highlight: true
-  },
-  {
-    name: "Consultoría Continua",
-    description: "Acompañamiento estratégico y evolución tecnológica.",
-    features: [
-      "Bolsa de horas mensual",
-      "Sesiones de estrategia trimestrales",
-      "Auditoría de nuevos procesos",
-      "Soporte preferencial"
-    ],
-    cta: "Hablar con Asesor"
   },
 ];
 

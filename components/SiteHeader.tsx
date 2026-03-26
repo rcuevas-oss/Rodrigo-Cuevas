@@ -2,69 +2,19 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 import { Button } from "./ui/button"
 import {
-    NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger,
-    navigationMenuTriggerStyle,
-} from "./ui/navigation-menu"
-import {
     Sheet,
     SheetContent,
     SheetHeader,
     SheetTitle,
     SheetTrigger,
 } from "./ui/sheet"
-import { Menu, Github, ArrowRight, Bot, Zap, Code, Terminal, Sparkles, BookOpen, Database, Users, BarChart3, MessageSquare, ShoppingCart, Cloud, Palette } from "lucide-react"
+import { Menu, ArrowRight, Palette } from "lucide-react"
 
-const solutions = [
-    {
-        title: "Automatización de Flujos",
-        href: "#servicios",
-        description: "Optimiza procesos repetitivos con agentes inteligentes.",
-        icon: Zap
-    },
-    {
-        title: "Software a Medida",
-        href: "#servicios",
-        description: "Construimos infraestructura robusta y escalable.",
-        icon: Code
-    },
-    {
-        title: "Modelos de IA",
-        href: "#servicios",
-        description: "Modelos personalizados entrenados con tus datos.",
-        icon: Bot
-    },
-    {
-        title: "Sistemas Cloud",
-        href: "#servicios",
-        description: "Infraestructura propia en tu nube de Google.",
-        icon: Terminal
-    }
-]
-
-const modules = [
-    {
-        title: "Vector DB",
-        href: "#servicios",
-        description: "Gestión de embeddings para IA.",
-        icon: Database
-    },
-    {
-        title: "Custom CRM",
-        href: "#servicios",
-        description: "Control total de tus clientes.",
-        icon: Users
-    },
-    {
-        title: "Realtime API",
-        href: "#servicios",
-        description: "Sincronización instantánea.",
-        icon: Sparkles
-    }
+const navItems = [
+    { label: "Servicios", href: "#servicios" },
+    { label: "Casos de uso", href: "#casos-de-uso" },
+    { label: "Cómo trabajamos", href: "#como-trabajamos" },
+    { label: "Contacto", href: "#contacto" },
 ]
 
 interface SiteHeaderProps {
@@ -74,192 +24,89 @@ interface SiteHeaderProps {
 
 export default function SiteHeader({ theme, onToggleTheme }: SiteHeaderProps) {
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/80 backdrop-blur-md">
-            <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-
-                {/* LOGO & DESKTOP NAV */}
+        <header className="sticky top-0 z-50 w-full border-b border-[#dbe3ec]/70 bg-[rgba(245,247,251,0.86)] backdrop-blur-xl">
+            <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-[74px] lg:px-8">
                 <div className="flex items-center gap-10">
-                    <a href="/" className="flex items-center gap-2 transition-opacity hover:opacity-90">
-                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground shadow-sm">
+                    <a href="/" className="flex items-center gap-3 transition-opacity hover:opacity-90">
+                        <div className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-[#111827] text-white shadow-[0_14px_28px_rgba(17,24,39,0.14)]">
                             <span className="text-sm font-bold">N</span>
                         </div>
-                        <span className="text-lg font-bold tracking-tight text-foreground">
-                            NexAI
-                        </span>
+                        <div className="leading-none">
+                            <span className="block text-lg font-bold tracking-tight text-foreground">
+                                NexAI
+                            </span>
+                            <span className="hidden text-[11px] font-medium text-muted-foreground lg:block">
+                                Soluciones digitales para pymes
+                            </span>
+                        </div>
                     </a>
 
-                    <nav className="hidden lg:flex">
-                        <NavigationMenu>
-                            <NavigationMenuList className="gap-1">
-                                <NavigationMenuItem>
-                                    <NavigationMenuTrigger className="text-muted-foreground hover:text-foreground border-none bg-transparent">
-                                        Soluciones
-                                    </NavigationMenuTrigger>
-                                    <NavigationMenuContent>
-                                        <div className="flex w-[600px] gap-3 p-4 md:w-[700px] lg:w-[850px]">
-                                            <div className="flex-1 border-r border-border pr-4">
-                                                <h4 className="mb-4 px-3 text-[11px] font-black uppercase tracking-widest text-muted-foreground">Core Services</h4>
-                                                <ul className="grid gap-3">
-                                                    {solutions.map((item) => (
-                                                        <ListItem
-                                                            key={item.title}
-                                                            title={item.title}
-                                                            href={item.href}
-                                                            icon={item.icon}
-                                                        >
-                                                            {item.description}
-                                                        </ListItem>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                            <div className="w-[300px] pl-4">
-                                                <h4 className="mb-4 px-3 text-[11px] font-black uppercase tracking-widest text-muted-foreground">Modules</h4>
-                                                <ul className="grid gap-3">
-                                                    {modules.map((item) => (
-                                                        <ListItem
-                                                            key={item.title}
-                                                            title={item.title}
-                                                            href={item.href}
-                                                            icon={item.icon}
-                                                            small
-                                                        >
-                                                            {item.description}
-                                                        </ListItem>
-                                                    ))}
-                                                    <div className="mt-4 pt-4 border-t border-border">
-                                                        <ListItem
-                                                            title="Ver todas las features"
-                                                            href="#servicios"
-                                                            icon={Sparkles}
-                                                            className="bg-muted/50"
-                                                        >
-                                                            Explora todo el ecosistema NexAI.
-                                                        </ListItem>
-                                                    </div>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </NavigationMenuContent>
-                                </NavigationMenuItem>
-
-                                <NavigationMenuItem>
-                                    <NavigationMenuTrigger className="text-accent hover:text-accent font-bold border-none bg-transparent">
-                                        Agentes IA
-                                    </NavigationMenuTrigger>
-                                    <NavigationMenuContent>
-                                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
-                                            <ListItem title="Soporte 24/7" href="#evaluador-ia" icon={MessageSquare}>
-                                                Automatiza la atención al cliente sin fricciones.
-                                            </ListItem>
-                                            <ListItem title="Análisis Pro" href="#evaluador-ia" icon={BarChart3}>
-                                                IA que procesa tus métricas críticas.
-                                            </ListItem>
-                                        </ul>
-                                    </NavigationMenuContent>
-                                </NavigationMenuItem>
-
-                                <NavigationMenuItem>
-                                    <NavigationMenuTrigger className="text-muted-foreground hover:text-foreground">
-                                        Industrias
-                                    </NavigationMenuTrigger>
-                                    <NavigationMenuContent>
-                                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px]">
-                                            <ListItem title="E-commerce" href="#servicios" icon={ShoppingCart}>
-                                                Escalabilidad y logística inteligente.
-                                            </ListItem>
-                                            <ListItem title="SaaS" href="#servicios" icon={Cloud}>
-                                                Infraestructura propia para startups.
-                                            </ListItem>
-                                        </ul>
-                                    </NavigationMenuContent>
-                                </NavigationMenuItem>
-
-                                <NavigationMenuItem>
-                                    <a href="#precios" className={cn(navigationMenuTriggerStyle(), "text-muted-foreground hover:text-foreground bg-transparent")}>
-                                        Precios
-                                    </a>
-                                </NavigationMenuItem>
-                                <NavigationMenuItem>
-                                    <a href="#metodologia" className={cn(navigationMenuTriggerStyle(), "text-muted-foreground hover:text-foreground bg-transparent")}>
-                                        Tecnología
-                                    </a>
-                                </NavigationMenuItem>
-                                <NavigationMenuItem>
-                                    <a href="#blog" className={cn(navigationMenuTriggerStyle(), "text-muted-foreground hover:text-foreground bg-transparent")}>
-                                        Blog
-                                    </a>
-                                </NavigationMenuItem>
-                            </NavigationMenuList>
-                        </NavigationMenu>
+                    <nav className="hidden lg:flex items-center gap-2 rounded-full border border-[#dbe3ec] bg-white/80 px-2 py-2 shadow-[0_10px_28px_rgba(70,85,98,0.05)]">
+                        {navItems.map((item) => (
+                            <a
+                                key={item.label}
+                                href={item.href}
+                                className="rounded-full px-4 py-2 text-sm font-semibold text-muted-foreground transition-all hover:bg-[#f4f7fb] hover:text-foreground"
+                            >
+                                {item.label}
+                            </a>
+                        ))}
                     </nav>
                 </div>
 
-                {/* ACCIONES DESKTOP */}
                 <div className="hidden lg:flex items-center gap-3">
                     <Button 
                         variant="ghost" 
                         size="sm" 
                         onClick={onToggleTheme}
-                        className="h-9 px-4 flex items-center gap-2 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all rounded-lg"
+                        className="h-10 rounded-full border border-[#dbe3ec] bg-white/85 px-4 text-muted-foreground shadow-[0_10px_22px_rgba(70,85,98,0.04)] hover:bg-white hover:text-foreground"
                     >
                         <Palette size={16} className={cn("transition-colors", theme === 'emma' ? "text-primary" : "text-muted-foreground")} />
                         <span className="text-xs font-semibold">{theme === 'default' ? 'Modo Emma' : 'Modo Original'}</span>
                     </Button>
 
-                    <a
-                        href="https://github.com"
-                        target="_blank"
-                        rel="noreferrer"
-                        className="flex items-center gap-2 rounded-lg px-3 py-1.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                    >
-                        <Github size={18} />
-                        <span className="text-xs text-muted-foreground/80">97.6k</span>
-                    </a>
-
-                    <Button variant="ghost" className="h-9 px-4 text-sm font-semibold text-muted-foreground hover:text-foreground">
-                        Login
-                    </Button>
-
-                    <Button variant="default" size="sm" className="h-9 rounded-lg font-bold shadow-primary/10 hover:shadow-primary/20">
-                        Comenzar
+                    <Button asChild variant="default" size="sm" className="h-10 rounded-full bg-[#111827] px-5 font-bold text-white shadow-[0_16px_36px_rgba(17,24,39,0.16)] hover:bg-[#0f172a]">
+                        <a href="#contacto">Agendar diagnóstico</a>
                     </Button>
                 </div>
 
-                {/* MOBILE NAV */}
                 <div className="flex items-center gap-2 lg:hidden">
                     <Button 
                         variant="ghost" 
                         size="icon" 
                         onClick={onToggleTheme}
-                        className="h-9 w-9 rounded-lg text-muted-foreground hover:text-primary transition-colors"
+                        className="h-9 w-9 rounded-full border border-[#dbe3ec] bg-white/90 text-muted-foreground shadow-[0_10px_18px_rgba(70,85,98,0.04)] hover:text-primary transition-colors"
                         title={theme === 'default' ? "Modo Emma" : "Modo Original"}
                     >
                         <Palette size={20} className={cn(theme === 'emma' ? "text-primary animate-pulse" : "")} />
                     </Button>
                     <Sheet>
                         <SheetTrigger asChild>
-                            <Button variant="ghost" size="icon" className="h-9 w-9">
+                            <Button variant="ghost" size="icon" className="h-9 w-9 rounded-full border border-[#dbe3ec] bg-white/90 shadow-[0_10px_18px_rgba(70,85,98,0.04)]">
                                 <Menu className="h-5 w-5" />
                             </Button>
                         </SheetTrigger>
-                        <SheetContent side="right" className="w-[300px] p-0">
-                            <div className="flex flex-col h-full p-6">
+                        <SheetContent side="right" className="w-[88vw] max-w-[320px] p-0">
+                            <div className="flex h-full flex-col p-5 sm:p-6">
                                 <SheetHeader>
                                     <SheetTitle className="text-left font-bold text-foreground">NexAI Menú</SheetTitle>
                                 </SheetHeader>
-                                <div className="mt-8 flex flex-col gap-4 overflow-y-auto pl-2">
-                                    <MobileNavLink href="#servicios" icon={Zap}>Soluciones</MobileNavLink>
-                                    <MobileNavLink href="#ia" className="text-primary font-bold" icon={Bot}>Agentes IA</MobileNavLink>
-                                    <MobileNavLink href="#industrias" icon={Database}>Industrias</MobileNavLink>
-                                    <MobileNavLink href="#precios" icon={BarChart3}>Precios</MobileNavLink>
-                                    <MobileNavLink href="#metodologia" icon={Code}>Tecnología</MobileNavLink>
-                                    <MobileNavLink href="#blog" icon={BookOpen}>Blog</MobileNavLink>
+                                <div className="mt-6 flex flex-col gap-3 overflow-y-auto pl-1">
+                                    {navItems.map((item) => (
+                                        <MobileNavLink key={item.label} href={item.href}>
+                                            {item.label}
+                                        </MobileNavLink>
+                                    ))}
                                 </div>
                                 <div className="mt-auto pt-6 border-t border-border flex flex-col gap-3">
-                                    <Button variant="outline" className="w-full">Login</Button>
-                                    <Button variant="default" className="w-full">
-                                        Comenzar Ahora
-                                        <ArrowRight className="ml-2 h-4 w-4" />
+                                    <Button asChild variant="outline" className="w-full">
+                                        <a href="#casos-de-uso">Ver ejemplos</a>
+                                    </Button>
+                                    <Button asChild variant="default" className="w-full">
+                                        <a href="#contacto">
+                                            Agendar diagnóstico
+                                            <ArrowRight className="ml-2 h-4 w-4" />
+                                        </a>
                                     </Button>
                                 </div>
                             </div>
@@ -271,53 +118,12 @@ export default function SiteHeader({ theme, onToggleTheme }: SiteHeaderProps) {
     )
 }
 
-const ListItem = React.forwardRef<
-    React.ElementRef<"a">,
-    React.ComponentPropsWithoutRef<"a"> & { icon?: any, small?: boolean }
->(({ className, title, children, icon: Icon, small, ...props }, ref) => {
-    return (
-        <li>
-            <NavigationMenuLink asChild>
-                <a
-                    ref={ref}
-                    className={cn(
-                        "flex select-none items-center gap-4 rounded-xl p-3 leading-none no-underline outline-none transition-all duration-300 hover:bg-muted/50 hover:text-foreground group",
-                        className
-                    )}
-                    {...props}
-                >
-                    {Icon && (
-                        <div className={cn(
-                            "flex shrink-0 items-center justify-center rounded-xl border border-border bg-primary/10 shadow-sm transition-colors group-hover:border-primary/50",
-                            small ? "h-9 w-9" : "h-12 w-12"
-                        )}>
-                            <Icon className={cn("text-primary transition-colors", small ? "h-4 w-4" : "h-6 w-6")} />
-                        </div>
-                    )}
-                    <div className="flex flex-col gap-1">
-                        <div className="text-sm font-bold leading-none tracking-tight text-foreground">{title}</div>
-                        <p className="line-clamp-2 text-xs leading-snug text-muted-foreground font-medium opacity-80">
-                            {children}
-                        </p>
-                    </div>
-                </a>
-            </NavigationMenuLink>
-        </li>
-    )
-})
-ListItem.displayName = "ListItem"
-
-function MobileNavLink({ href, children, className, icon: Icon }: { href: string, children: React.ReactNode, className?: string, icon?: any }) {
+function MobileNavLink({ href, children, className }: { href: string, children: React.ReactNode, className?: string }) {
     return (
         <a
             href={href}
-            className={cn("flex items-center gap-4 text-lg font-medium text-muted-foreground transition-colors hover:text-foreground", className)}
+            className={cn("flex items-center gap-4 text-base font-medium text-muted-foreground transition-colors hover:text-foreground", className)}
         >
-            {Icon && (
-                <div className="flex shrink-0 items-center justify-center h-10 w-10 rounded-xl border border-border bg-primary/10 shadow-sm transition-colors">
-                    <Icon className="h-5 w-5 text-primary transition-colors" />
-                </div>
-            )}
             {children}
         </a>
     )
