@@ -255,14 +255,14 @@ export const AIChat: React.FC = () => {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
-            className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-end justify-end"
+            className="fixed bottom-3 right-3 z-50 flex items-end justify-end sm:bottom-6 sm:right-6"
           >
             <button
               onClick={() => setIsOpen(true)}
-              className="group relative flex items-center gap-3 rounded-full border border-border/50 bg-card px-4 py-3.5 sm:px-5 sm:py-4 text-foreground shadow-[0_10px_40px_rgba(0,0,0,0.45)] transition-all duration-300 hover:scale-[1.02] hover:border-primary/30 hover:shadow-[0_0_0_1px_rgba(170,255,0,0.18),0_18px_50px_rgba(0,0,0,0.55)]"
+              className="group relative flex items-center gap-3 rounded-full border border-border/50 bg-card px-3 py-3 sm:px-5 sm:py-4 text-foreground shadow-[0_10px_40px_rgba(0,0,0,0.45)] transition-all duration-300 hover:scale-[1.02] hover:border-primary/30 hover:shadow-[0_0_0_1px_rgba(170,255,0,0.18),0_18px_50px_rgba(0,0,0,0.55)]"
               aria-label="Abrir chat"
             >
-              <span className="relative flex h-10 w-10 sm:h-11 sm:w-11 flex-shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_0_24px_rgba(170,255,0,0.35)]">
+              <span className="relative flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_0_24px_rgba(170,255,0,0.35)] sm:h-11 sm:w-11">
                 <MessageSquare className="h-5 w-5" />
               </span>
 
@@ -287,7 +287,7 @@ export const AIChat: React.FC = () => {
               : 'inset-0 sm:inset-auto sm:bottom-6 sm:right-6 sm:w-[480px] h-[100dvh] sm:h-[750px] sm:max-h-[calc(100vh-6rem)] rounded-none sm:rounded-[2rem] border-0 sm:border'
               }`}
           >
-            <div className={`px-4 py-4 sm:px-6 sm:py-5 flex flex-col justify-end z-10 relative shrink-0 border-b border-border/40 ${activeTab === 'home' ? 'bg-card/40' : 'bg-card/20'}`}>
+            <div className={`px-4 py-3.5 sm:px-6 sm:py-5 flex flex-col justify-end z-10 relative shrink-0 border-b border-border/40 ${activeTab === 'home' ? 'bg-card/40' : 'bg-card/20'}`}>
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-30" />
 
               <div className="absolute top-4 right-4 flex items-center gap-2 z-20">
@@ -312,10 +312,10 @@ export const AIChat: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.15 }}
-                className={`relative z-10 flex items-end justify-between ${activeTab === 'home' ? 'mt-6' : 'mt-2'}`}
+                className={`relative z-10 flex items-end justify-between ${activeTab === 'home' ? 'mt-4 sm:mt-6' : 'mt-2'}`}
               >
                 <div>
-                  <h3 className="font-extrabold text-foreground text-xl sm:text-2xl tracking-tight leading-none mb-1.5">
+                  <h3 className="mb-1 text-lg font-extrabold leading-none tracking-tight text-foreground sm:mb-1.5 sm:text-2xl">
                     {currentTitle}
                   </h3>
                   <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest flex items-center gap-1.5 opacity-80">
@@ -344,7 +344,7 @@ export const AIChat: React.FC = () => {
               {activeTab === 'contact' && renderContactTab()}
             </div>
 
-            <div className="flex items-center justify-around px-2 pt-2 pb-5 sm:pb-3 bg-card border-t border-border/50 shrink-0">
+            <div className="flex items-center justify-around bg-card px-2 pb-4 pt-2 sm:pb-3 border-t border-border/50 shrink-0">
               {navItems.map((item) => {
                 const isActive = activeTab === item.id;
                 return (

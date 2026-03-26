@@ -94,7 +94,7 @@ export const AIAgentsSection: React.FC = () => {
   return (
     <section
       id="agentes-ia"
-      className="relative overflow-hidden border-y border-[#dbe4ed] bg-[#f4f7fb] py-16 md:py-24"
+      className="relative overflow-hidden border-y border-[#dbe4ed] bg-[#f4f7fb] py-12 md:py-24"
     >
       <div
         className="pointer-events-none absolute inset-0"
@@ -105,33 +105,33 @@ export const AIAgentsSection: React.FC = () => {
       />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-10 max-w-3xl text-center md:mb-16">
+        <div className="mx-auto mb-9 max-w-3xl text-center md:mb-16">
           <FadeIn>
             <Badge
               variant="outline"
-              className="mb-4 rounded-full border-[#dbe3ec] bg-white/90 px-4 py-1.5 text-[11px] font-black uppercase tracking-[0.18em] text-primary shadow-sm"
+              className="mb-4 rounded-full border-[#dbe3ec] bg-white/90 px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.16em] text-primary shadow-sm sm:px-4 sm:text-[11px] sm:tracking-[0.18em]"
             >
               <BrainCircuit className="mr-2 h-3.5 w-3.5" />
               Agentes de IA para atención
             </Badge>
-            <h2 className="mb-5 text-3xl font-semibold tracking-[-0.05em] text-foreground sm:text-5xl">
+            <h2 className="mb-4 text-3xl font-semibold tracking-[-0.05em] text-foreground sm:mb-5 sm:text-5xl">
               Creamos agentes de IA, no solo un chat
             </h2>
-            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="text-[15px] leading-relaxed text-muted-foreground sm:text-lg">
               Diseñamos agentes que responden con criterio, entienden el contexto de tu negocio y ejecutan acciones útiles en lugar de quedarse en una conversación superficial.
             </p>
           </FadeIn>
         </div>
 
-        <div className="grid items-stretch gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:gap-8">
+        <div className="grid items-stretch gap-5 lg:grid-cols-[0.92fr_1.08fr] lg:gap-8">
           <FadeIn>
-            <div className="rounded-[2.6rem] border border-[#dce5ee] bg-white/90 p-6 shadow-[0_26px_70px_rgba(70,85,98,0.06)] backdrop-blur sm:p-8">
-              <div className="mb-8 flex items-center justify-between gap-4">
+            <div className="rounded-[2rem] border border-[#dce5ee] bg-white/90 p-5 shadow-[0_26px_70px_rgba(70,85,98,0.06)] backdrop-blur sm:rounded-[2.6rem] sm:p-8">
+              <div className="mb-6 flex items-center justify-between gap-4 sm:mb-8">
                 <div>
                   <p className="text-[11px] font-black uppercase tracking-[0.18em] text-primary">
                     Atención inteligente
                   </p>
-                  <h3 className="mt-2 text-2xl font-semibold tracking-[-0.04em] text-foreground sm:text-3xl">
+                  <h3 className="mt-2 text-[1.8rem] font-semibold tracking-[-0.05em] text-foreground sm:text-3xl">
                     Un agente que entiende, responde y actúa con el tono de tu negocio
                   </h3>
                 </div>
@@ -140,7 +140,7 @@ export const AIAgentsSection: React.FC = () => {
                 </div>
               </div>
 
-              <div className="grid gap-4">
+              <div className="grid gap-3 sm:gap-4">
                 {capabilities.map((item, index) => (
                   <motion.div
                     key={item.title}
@@ -149,20 +149,20 @@ export const AIAgentsSection: React.FC = () => {
                     viewport={{ once: true, amount: 0.25 }}
                     transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
                     whileHover={{ y: -4 }}
-                    className="rounded-[2rem] border border-[#e2e9ef] bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfd_100%)] p-5 shadow-[0_18px_36px_rgba(70,85,98,0.05)]"
+                    className="rounded-[1.6rem] border border-[#e2e9ef] bg-[linear-gradient(180deg,#ffffff_0%,#f8fbfd_100%)] p-4 shadow-[0_18px_36px_rgba(70,85,98,0.05)] sm:rounded-[2rem] sm:p-5"
                   >
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-[#111827] text-white shadow-[0_16px_32px_rgba(17,24,39,0.14)]">
-                        <item.icon size={20} />
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="flex h-10 w-10 flex-none items-center justify-center rounded-2xl bg-[#111827] text-white shadow-[0_16px_32px_rgba(17,24,39,0.14)] sm:h-12 sm:w-12">
+                        <item.icon size={18} />
                       </div>
                       <div>
                         <p className="text-[10px] font-black uppercase tracking-[0.18em] text-primary">
                           {item.eyebrow}
                         </p>
-                        <h4 className="mt-2 text-lg font-semibold tracking-[-0.03em] text-foreground">
+                        <h4 className="mt-2 text-[1.05rem] font-semibold tracking-[-0.03em] text-foreground sm:text-lg">
                           {item.title}
                         </h4>
-                        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                        <p className="mt-2.5 text-[14px] leading-relaxed text-muted-foreground sm:mt-3 sm:text-sm">
                           {item.description}
                         </p>
                       </div>
@@ -174,7 +174,7 @@ export const AIAgentsSection: React.FC = () => {
           </FadeIn>
 
           <FadeIn delay={100}>
-            <div className="relative overflow-hidden rounded-[2.8rem] border border-[#1d2835] bg-[#0b1118] p-5 text-white shadow-[0_38px_110px_rgba(10,18,30,0.28)] sm:p-6">
+            <div className="relative overflow-hidden rounded-[2rem] border border-[#1d2835] bg-[#0b1118] p-4 text-white shadow-[0_38px_110px_rgba(10,18,30,0.28)] sm:rounded-[2.8rem] sm:p-6">
               <div
                 className="pointer-events-none absolute inset-0"
                 style={{
@@ -192,7 +192,7 @@ export const AIAgentsSection: React.FC = () => {
               <div className="pointer-events-none absolute inset-y-0 right-0 w-[46%] bg-[linear-gradient(90deg,rgba(11,17,24,0)_0%,rgba(11,17,24,0.28)_12%,rgba(11,17,24,0.82)_58%,#091019_100%)]" />
 
               <div className="relative">
-                <div className="flex flex-wrap items-center justify-between gap-3 rounded-[1.9rem] border border-white/10 bg-white/5 px-4 py-3.5 backdrop-blur-sm">
+                <div className="flex flex-wrap items-center justify-between gap-3 rounded-[1.5rem] border border-white/10 bg-white/5 px-3.5 py-3 backdrop-blur-sm sm:rounded-[1.9rem] sm:px-4 sm:py-3.5">
                   <div>
                     <p className="text-[10px] font-black uppercase tracking-[0.22em] text-[#c7ff63]">
                       Demo de agente
@@ -215,7 +215,7 @@ export const AIAgentsSection: React.FC = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.2 }}
                       transition={{ duration: 0.45, delay: 0.15 + index * 0.05 }}
-                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-white/75"
+                      className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-2.5 py-2 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/75 sm:px-3 sm:text-[11px] sm:tracking-[0.16em]"
                     >
                       <item.icon size={13} color={item.color} />
                       <span>{item.title}</span>
@@ -223,14 +223,14 @@ export const AIAgentsSection: React.FC = () => {
                   ))}
                 </div>
 
-                <div className="mt-5 grid gap-4 xl:grid-cols-[1.08fr_0.92fr]">
-                  <div className="rounded-[2rem] border border-white/10 bg-white/5 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur sm:p-5">
+                <div className="mt-4 grid gap-3 sm:mt-5 sm:gap-4 xl:grid-cols-[1.08fr_0.92fr]">
+                  <div className="rounded-[1.55rem] border border-white/10 bg-white/5 p-3.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] backdrop-blur sm:rounded-[2rem] sm:p-5">
                     <div className="mb-4 flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.18em] text-white/50">
                       <MessagesSquare size={13} className="text-[#c7ff63]" />
                       Conversación realista
                     </div>
 
-                    <div className="space-y-3.5">
+                    <div className="space-y-3">
                       {conversation.map((item, index) => (
                         <motion.div
                           key={`${item.label}-${item.text}`}
@@ -238,7 +238,7 @@ export const AIAgentsSection: React.FC = () => {
                           whileInView={{ opacity: 1, x: 0, y: 0 }}
                           viewport={{ once: true, amount: 0.3 }}
                           transition={{ duration: 0.45, delay: 0.2 + index * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                          className={`max-w-[92%] border px-4 py-4 ${
+                          className={`max-w-[94%] border px-3.5 py-3.5 sm:max-w-[92%] sm:px-4 sm:py-4 ${
                             item.role === 'user'
                               ? 'ml-auto rounded-[1.6rem_1.6rem_0.7rem_1.6rem] border-white/12 bg-white/10'
                               : 'mr-auto rounded-[1.6rem_1.6rem_1.6rem_0.7rem] border-white/12 bg-[#081019] shadow-[0_12px_28px_rgba(0,0,0,0.22)]'
@@ -247,14 +247,14 @@ export const AIAgentsSection: React.FC = () => {
                           <p className="mb-2 text-[10px] font-black uppercase tracking-[0.18em] text-white/45">
                             {item.label}
                           </p>
-                          <p className="text-sm leading-relaxed text-white/85">
+                          <p className="text-[14px] leading-relaxed text-white/85 sm:text-sm">
                             {item.text}
                           </p>
                         </motion.div>
                       ))}
                     </div>
 
-                    <div className="mt-5 flex flex-wrap gap-2.5">
+                    <div className="mt-4 flex flex-wrap gap-2 sm:mt-5 sm:gap-2.5">
                       {agentActions.map((item, index) => (
                         <motion.div
                           key={item.title}
@@ -262,7 +262,7 @@ export const AIAgentsSection: React.FC = () => {
                           whileInView={{ opacity: 1, y: 0 }}
                           viewport={{ once: true, amount: 0.25 }}
                           transition={{ duration: 0.4, delay: 0.35 + index * 0.05 }}
-                          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-2 text-xs font-semibold text-white/80"
+                          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[11px] font-semibold text-white/80 sm:px-3.5 sm:text-xs"
                         >
                           <item.icon size={14} className="text-[#c7ff63]" />
                           <span>{item.title}</span>
@@ -277,14 +277,14 @@ export const AIAgentsSection: React.FC = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.25 }}
                       transition={{ duration: 0.45, delay: 0.22 }}
-                      className="rounded-[1.8rem] border border-white/10 bg-white/[0.06] p-4 backdrop-blur-sm"
+                      className="rounded-[1.45rem] border border-white/10 bg-white/[0.06] p-3.5 backdrop-blur-sm sm:rounded-[1.8rem] sm:p-4"
                     >
                       <div className="flex items-center justify-between">
                         <div>
                           <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/50">
                             Estado del agente
                           </p>
-                          <p className="mt-1 text-lg font-semibold tracking-[-0.03em] text-white">
+                          <p className="mt-1 text-base font-semibold tracking-[-0.03em] text-white sm:text-lg">
                             Listo para atender, clasificar y ejecutar
                           </p>
                         </div>
@@ -299,7 +299,7 @@ export const AIAgentsSection: React.FC = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.25 }}
                       transition={{ duration: 0.45, delay: 0.3 }}
-                      className="rounded-[1.8rem] border border-white/10 bg-white/5 p-4 backdrop-blur-sm"
+                      className="rounded-[1.45rem] border border-white/10 bg-white/5 p-3.5 backdrop-blur-sm sm:rounded-[1.8rem] sm:p-4"
                     >
                       <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/50">
                         Acciones en segundo plano
@@ -324,7 +324,7 @@ export const AIAgentsSection: React.FC = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, amount: 0.25 }}
                       transition={{ duration: 0.45, delay: 0.36 }}
-                      className="rounded-[1.8rem] border border-white/10 bg-[rgba(10,18,28,0.9)] p-4"
+                      className="rounded-[1.45rem] border border-white/10 bg-[rgba(10,18,28,0.9)] p-3.5 sm:rounded-[1.8rem] sm:p-4"
                     >
                       <p className="text-[10px] font-black uppercase tracking-[0.18em] text-white/50">
                         Capa de decisión
@@ -339,7 +339,7 @@ export const AIAgentsSection: React.FC = () => {
                               <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-white/8 text-[#c7ff63]">
                                 <item.icon size={15} />
                               </div>
-                              <p className="text-sm font-semibold text-white">{item.title}</p>
+                            <p className="text-[13px] font-semibold text-white sm:text-sm">{item.title}</p>
                             </div>
                             <p className="text-xs leading-relaxed text-white/[0.62]">{item.text}</p>
                           </div>
@@ -349,14 +349,14 @@ export const AIAgentsSection: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mt-5 border-t border-white/10 pt-5">
-                  <p className="mb-5 max-w-2xl text-sm leading-relaxed text-white/[0.68]">
+                <div className="mt-4 border-t border-white/10 pt-4 sm:mt-5 sm:pt-5">
+                  <p className="mb-4 max-w-2xl text-[14px] leading-relaxed text-white/[0.68] sm:mb-5 sm:text-sm">
                     Puede vivir en web, WhatsApp o formularios y conectarse con tu agenda, documentos o procesos internos para responder mejor y dejar acciones listas.
                   </p>
                   <div className="flex flex-col gap-3 sm:flex-row">
                     <Button
                       asChild
-                      className="h-12 rounded-full bg-[#c7ff63] px-6 text-[#111827] shadow-[0_18px_40px_rgba(199,255,99,0.18)] hover:bg-[#d8ff91] sm:w-auto"
+                      className="h-11 rounded-full bg-[#c7ff63] px-5 text-[#111827] shadow-[0_18px_40px_rgba(199,255,99,0.18)] hover:bg-[#d8ff91] sm:h-12 sm:w-auto sm:px-6"
                     >
                       <a href="#contacto">
                         Quiero un agente para mi negocio
@@ -366,7 +366,7 @@ export const AIAgentsSection: React.FC = () => {
                     <Button
                       asChild
                       variant="outline"
-                      className="h-12 rounded-full border-white/14 bg-white/[0.04] px-6 text-white hover:bg-white/[0.08] hover:text-white"
+                      className="h-11 rounded-full border-white/14 bg-white/[0.04] px-5 text-white hover:bg-white/[0.08] hover:text-white sm:h-12 sm:px-6"
                     >
                       <a href="#casos-de-uso">Ver casos de uso</a>
                     </Button>

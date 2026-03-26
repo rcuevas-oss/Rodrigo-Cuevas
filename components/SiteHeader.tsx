@@ -25,17 +25,17 @@ interface SiteHeaderProps {
 export default function SiteHeader({ theme, onToggleTheme }: SiteHeaderProps) {
     return (
         <header className="sticky top-0 z-50 w-full border-b border-[#dbe3ec]/70 bg-[rgba(245,247,251,0.86)] backdrop-blur-xl">
-            <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-[74px] lg:px-8">
-                <div className="flex items-center gap-10">
+            <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-[74px] lg:px-8">
+                <div className="flex items-center gap-4 sm:gap-10">
                     <a href="/" className="flex items-center gap-3 transition-opacity hover:opacity-90">
-                        <div className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-[#111827] text-white shadow-[0_14px_28px_rgba(17,24,39,0.14)]">
-                            <span className="text-sm font-bold">N</span>
+                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-2xl bg-[#111827] text-white shadow-[0_14px_28px_rgba(17,24,39,0.14)] sm:h-9 sm:w-9">
+                            <span className="text-xs font-bold sm:text-sm">N</span>
                         </div>
                         <div className="leading-none">
-                            <span className="block text-lg font-bold tracking-tight text-foreground">
+                            <span className="block text-base font-bold tracking-tight text-foreground sm:text-lg">
                                 NexAI
                             </span>
-                            <span className="hidden text-[11px] font-medium text-muted-foreground lg:block">
+                            <span className="hidden text-[11px] font-medium text-muted-foreground xl:block">
                                 Soluciones digitales para pymes
                             </span>
                         </div>
@@ -75,23 +75,23 @@ export default function SiteHeader({ theme, onToggleTheme }: SiteHeaderProps) {
                         variant="ghost" 
                         size="icon" 
                         onClick={onToggleTheme}
-                        className="h-9 w-9 rounded-full border border-[#dbe3ec] bg-white/90 text-muted-foreground shadow-[0_10px_18px_rgba(70,85,98,0.04)] hover:text-primary transition-colors"
+                        className="h-8 w-8 rounded-full border border-[#dbe3ec] bg-white/90 text-muted-foreground shadow-[0_10px_18px_rgba(70,85,98,0.04)] hover:text-primary transition-colors sm:h-9 sm:w-9"
                         title={theme === 'default' ? "Modo Emma" : "Modo Original"}
                     >
-                        <Palette size={20} className={cn(theme === 'emma' ? "text-primary animate-pulse" : "")} />
+                        <Palette size={18} className={cn(theme === 'emma' ? "text-primary animate-pulse" : "")} />
                     </Button>
                     <Sheet>
                         <SheetTrigger asChild>
-                            <Button variant="ghost" size="icon" className="h-9 w-9 rounded-full border border-[#dbe3ec] bg-white/90 shadow-[0_10px_18px_rgba(70,85,98,0.04)]">
+                            <Button variant="ghost" size="icon" className="h-8 w-8 rounded-full border border-[#dbe3ec] bg-white/90 shadow-[0_10px_18px_rgba(70,85,98,0.04)] sm:h-9 sm:w-9">
                                 <Menu className="h-5 w-5" />
                             </Button>
                         </SheetTrigger>
-                        <SheetContent side="right" className="w-[88vw] max-w-[320px] p-0">
-                            <div className="flex h-full flex-col p-5 sm:p-6">
+                        <SheetContent side="right" className="w-[90vw] max-w-[320px] p-0">
+                            <div className="flex h-full flex-col p-5">
                                 <SheetHeader>
                                     <SheetTitle className="text-left font-bold text-foreground">NexAI Menú</SheetTitle>
                                 </SheetHeader>
-                                <div className="mt-6 flex flex-col gap-3 overflow-y-auto pl-1">
+                                <div className="mt-5 flex flex-col gap-3 overflow-y-auto pl-1">
                                     {navItems.map((item) => (
                                         <MobileNavLink key={item.label} href={item.href}>
                                             {item.label}
