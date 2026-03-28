@@ -242,7 +242,7 @@ export const AIChat: React.FC = () => {
   );
 
   const currentTitle =
-    activeTab === 'home' ? 'NexAI' :
+    activeTab === 'home' ? 'La Refactoria' :
       activeTab === 'messages' ? 'Conversemos' :
         activeTab === 'services' ? 'Servicios' : 'Contacto';
 

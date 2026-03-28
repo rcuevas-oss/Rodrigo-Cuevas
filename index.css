@@ -45,8 +45,32 @@
     @apply border-border;
   }
 
+  html {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    width: 100%;
+    min-width: 320px;
+    overflow-x: hidden;
+    overflow-x: clip;
+  }
+
+  #root {
+    width: 100%;
+    overflow-x: hidden;
+    overflow-x: clip;
+  }
+}
+
+@media (min-width: 1024px) {
+  @layer base {
+    html {
+      scrollbar-gutter: stable both-edges;
+    }
   }
 }
 
@@ -109,4 +133,303 @@
 /* Tipografía Técnica para insignias, código, etc. */
 .theme-emma code, .theme-emma pre, .theme-emma .font-mono, .theme-emma .inline-flex {
   font-family: 'Space Mono', monospace !important;
+}
+
+.home-route-root,
+.home-site-header,
+.home-hero,
+#servicios,
+#casos-de-uso,
+#flujos,
+#agentes-ia,
+#como-trabajamos,
+#faq {
+  transition:
+    background-color 280ms ease,
+    background-image 280ms ease,
+    border-color 280ms ease,
+    color 280ms ease,
+    box-shadow 280ms ease;
+}
+
+.theme-emma .home-route-root {
+  background: linear-gradient(180deg, #070b12 0%, #0b1017 26%, #0e141c 56%, #090d14 100%) !important;
+  color: rgb(244 243 255 / 0.96);
+}
+
+.theme-emma .home-site-header {
+  background: rgba(9, 14, 18, 0.82) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+}
+
+.theme-emma .home-site-header nav {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16) !important;
+}
+
+.theme-emma .home-site-header nav a {
+  color: rgb(244 243 255 / 0.74) !important;
+}
+
+.theme-emma .home-site-header nav a:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: rgb(255 255 255 / 0.96) !important;
+}
+
+.theme-emma .home-site-header button[class*="bg-white"],
+.theme-emma .home-site-header button[class*="bg-[rgba(245,247,251"],
+.theme-emma .home-site-header button[class*="border-[#dbe3ec]"] {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+  color: rgb(244 243 255 / 0.92) !important;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16) !important;
+}
+
+.theme-emma .home-site-header button[class*="bg-white"]:hover,
+.theme-emma .home-site-header button[class*="bg-[rgba(245,247,251"]:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.theme-emma .home-site-header a[class*="bg-[#111827]"] {
+  background: #c7ff63 !important;
+  color: #111418 !important;
+  box-shadow: 0 16px 36px rgba(199, 255, 99, 0.18) !important;
+}
+
+.theme-emma .home-site-header a[class*="bg-[#111827]"]:hover {
+  background: #d8ff91 !important;
+}
+
+.theme-emma .home-hero,
+.theme-emma :is(#servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) {
+  background: linear-gradient(180deg, #0a1017 0%, #111822 48%, #0b1119 100%) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.theme-emma .ai-agents-backdrop {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(92, 129, 255, 0.12), transparent 24%),
+    radial-gradient(circle at 88% 14%, rgba(164, 255, 115, 0.08), transparent 20%),
+    linear-gradient(180deg, #0b1119 0%, #101823 34%, #091019 100%) !important;
+}
+
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :is(h1, h2, h3, h4, h5, h6) {
+  color: rgb(255 255 255 / 0.96) !important;
+}
+
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) p {
+  color: rgb(244 243 255 / 0.76) !important;
+}
+
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, span)[class*="rounded-full"] {
+  border-color: rgba(255, 255, 255, 0.10) !important;
+  color: rgb(244 243 255 / 0.74) !important;
+}
+
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, article, section, aside, a)[class*="bg-white"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, article, section, aside, a)[class*="bg-[#f4"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, article, section, aside, a)[class*="bg-[#f6"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, article, section, aside, a)[class*="bg-[#f7"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, article, section, aside, a)[class*="bg-[#eef"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, article, section, aside, a)[class*="bg-[linear-gradient(180deg,rgba(255,255,255"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, article, section, aside, a)[class*="bg-[linear-gradient(135deg,#ffffff"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, article, section, aside, a)[class*="bg-[linear-gradient(180deg,#f"] {
+  background: linear-gradient(180deg, #121a23 0%, #0f151d 100%) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22) !important;
+}
+
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(span, button, div)[class*="bg-white"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(span, button, div)[class*="bg-[#eff4f8]"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(span, button, div)[class*="bg-[#f3f7fa]"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(span, button, div)[class*="bg-[#e6edf3]"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(span, button, div)[class*="bg-[#e3ebf2]"] {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+  color: rgb(244 243 255 / 0.76) !important;
+  box-shadow: none !important;
+}
+
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, article, section, aside)[class*="bg-[#111827]"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, article, section, aside)[class*="bg-[linear-gradient(135deg,#111827"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, article, section, aside)[class*="bg-[linear-gradient(180deg,#101827"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, article, section, aside)[class*="bg-[linear-gradient(180deg,#111827"] {
+  background: linear-gradient(180deg, #0f161e 0%, #0a1017 100%) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.24) !important;
+}
+
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, span, p, h3, h4)[class*="text-[#111827]"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, span, p)[class*="text-[#60707e]"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, span, p)[class*="text-[#61707c]"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, span, p)[class*="text-[#5f6f7d]"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, span, p)[class*="text-[#748292]"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, span, p, h2)[class*="text-foreground"],
+.theme-emma :is(.home-hero, #servicios, #casos-de-uso, #flujos, #agentes-ia, #como-trabajamos, #faq) :where(div, span, p)[class*="text-muted-foreground"] {
+  color: rgb(244 243 255 / 0.78) !important;
+}
+
+.bike-route-root,
+.bike-theme-header,
+.bike-theme-toggle,
+.bike-theme-section-light,
+.bike-theme-section-muted,
+.bike-theme-surface,
+.bike-theme-surface-alt,
+.bike-theme-surface-muted,
+.bike-theme-pill,
+.bike-theme-heading,
+.bike-theme-heading-soft,
+.bike-theme-text,
+.bike-theme-text-soft,
+.bike-theme-primary-button,
+.bike-theme-outline-button,
+.bike-theme-card-unselected,
+.bike-theme-panel-gradient,
+.bike-theme-footer,
+.bike-theme-footer-link,
+.bike-theme-nav-link,
+.bike-theme-subtitle {
+  transition:
+    background-color 280ms ease,
+    border-color 280ms ease,
+    color 280ms ease,
+    box-shadow 280ms ease;
+}
+
+.theme-emma .bike-route-root {
+  background: linear-gradient(180deg, #091016 0%, #0d141b 24%, #0f161d 52%, #0b1118 100%);
+  color: rgb(244 243 255 / 0.96);
+}
+
+.theme-emma .bike-theme-header {
+  background: rgba(9, 14, 18, 0.82) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.theme-emma .bike-theme-subtitle {
+  color: rgb(244 243 255 / 0.58) !important;
+}
+
+.theme-emma .bike-theme-nav-link,
+.theme-emma .bike-theme-footer-link {
+  color: rgb(244 243 255 / 0.72) !important;
+}
+
+.theme-emma .bike-theme-nav-link:hover,
+.theme-emma .bike-theme-footer-link:hover {
+  color: rgb(255 255 255 / 0.96) !important;
+}
+
+.theme-emma .bike-theme-toggle {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+  color: rgb(244 243 255 / 0.92) !important;
+}
+
+.theme-emma .bike-theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.theme-emma .bike-theme-section-light {
+  background: #0c1218 !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.theme-emma .bike-theme-section-muted {
+  background: #0f161d !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+.theme-emma .bike-theme-surface {
+  background: #121a22 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.22) !important;
+}
+
+.theme-emma .bike-theme-surface-alt {
+  background: #0d141b !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.theme-emma .bike-theme-surface-muted {
+  background: #151d24 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: rgb(244 243 255 / 0.86) !important;
+}
+
+.theme-emma .bike-theme-pill {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+  color: rgb(244 243 255 / 0.74) !important;
+  box-shadow: none !important;
+}
+
+.theme-emma .bike-theme-heading {
+  color: rgb(255 255 255 / 0.96) !important;
+}
+
+.theme-emma .bike-theme-heading-soft {
+  color: rgb(244 243 255 / 0.72) !important;
+}
+
+.theme-emma .bike-theme-text {
+  color: rgb(244 243 255 / 0.76) !important;
+}
+
+.theme-emma .bike-theme-text-soft {
+  color: rgb(244 243 255 / 0.56) !important;
+}
+
+.theme-emma .bike-theme-primary-button {
+  background: #c7ff63 !important;
+  border-color: transparent !important;
+  color: #111418 !important;
+  box-shadow: 0 20px 50px rgba(199, 255, 99, 0.18) !important;
+}
+
+.theme-emma .bike-theme-primary-button:hover {
+  background: #d8ff91 !important;
+}
+
+.theme-emma .bike-theme-outline-button {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: rgb(255 255 255 / 0.94) !important;
+}
+
+.theme-emma .bike-theme-outline-button:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: white !important;
+}
+
+.theme-emma .bike-theme-card-unselected {
+  background: #10171e !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: rgb(244 243 255 / 0.76) !important;
+}
+
+.theme-emma .bike-theme-panel-gradient {
+  background: linear-gradient(135deg, #10171d 0%, #141d25 52%, #0e141b 100%) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.24) !important;
+}
+
+.theme-emma .bike-theme-footer {
+  background: #0b1118 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: rgb(244 243 255 / 0.72) !important;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }

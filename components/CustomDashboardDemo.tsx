@@ -33,9 +33,9 @@ export const CustomDashboardDemo: React.FC = () => {
         const saasMonthly = userCount * 20;
         const saasAnnual = saasMonthly * 12;
 
-        // NexAI: $0 monthly
-        const nexaiAnnual = 0;
-        const savings = saasAnnual - nexaiAnnual;
+        // La Refactoria: $0 monthly
+        const laRefactoriaAnnual = 0;
+        const savings = saasAnnual - laRefactoriaAnnual;
 
         return {
             saasMonthly,
@@ -104,7 +104,7 @@ export const CustomDashboardDemo: React.FC = () => {
                                 </div>
                             </div>
                             <div className="bg-emerald-600 p-6 rounded-3xl shadow-xl shadow-emerald-200/40">
-                                <span className="text-[10px] font-black text-white/60 uppercase tracking-widest block mb-1">Tu Ahorro con NexAI</span>
+                                <span className="text-[10px] font-black text-white/60 uppercase tracking-widest block mb-1">Tu Ahorro con La Refactoria</span>
                                 <span className="text-2xl font-black text-white">${stats.savings.toLocaleString()}</span>
                                 <div className="flex items-center gap-1 mt-2 text-white">
                                     <CheckCircle2 className="w-3 h-3" />

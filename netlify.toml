@@ -3,6 +3,16 @@ command = "npm run build"
 publish = "dist"
 
 [[redirects]]
+from = "/tiendas-bicicletas/layouts"
+to = "/tiendas-bicicletas"
+status = 301
+
+[[redirects]]
+from = "/tiendas-bicicletas/temas"
+to = "/tiendas-bicicletas"
+status = 301
+
+[[redirects]]
 from = "/*"
 to = "/index.html"
 status = 200

@@ -8,7 +8,7 @@ import { Sparkles, ArrowRight, ShieldCheck, Send, Bot, User, Loader2, X } from "
 import { motion, AnimatePresence } from "framer-motion";
 
 const SYSTEM_INSTRUCTION = `
-Eres un Consultor Técnico Senior en Automatización e IA de NexAI.
+Eres un Consultor Técnico Senior en Automatización e IA de La Refactoria.
 Tu objetivo NO es charlar, sino DIAGNOSTICAR la viabilidad técnica de automatización para empresas B2B.
 
 IDIOMA: Español (España/Neutro).

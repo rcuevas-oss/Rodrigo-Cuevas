@@ -53,7 +53,7 @@ const conversation = [
   },
   {
     role: 'agent',
-    label: 'Agente NexAI',
+    label: 'Agente La Refactoria',
     text: 'Puedo responder con el contexto de tu negocio, clasificar la necesidad, derivar al área correcta y dejar una reunión propuesta.',
   },
 ];
@@ -97,7 +97,7 @@ export const AIAgentsSection: React.FC = () => {
       className="relative overflow-hidden border-y border-[#dbe4ed] bg-[#f4f7fb] py-12 md:py-24"
     >
       <div
-        className="pointer-events-none absolute inset-0"
+        className="ai-agents-backdrop pointer-events-none absolute inset-0"
         style={{
           background:
             'radial-gradient(circle at 12% 18%, rgba(114, 137, 255, 0.10), transparent 24%), radial-gradient(circle at 88% 14%, rgba(164, 255, 115, 0.08), transparent 20%), linear-gradient(180deg, #f4f7fb 0%, #f8fbfd 34%, #ffffff 100%)',

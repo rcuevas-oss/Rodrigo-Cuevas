@@ -9,7 +9,7 @@ import {
 } from 'lucide-react';
 import { NavItem, ServiceItem, MethodologyStep, EngagementModel, PricingPlan } from './types';
 
-export const APP_NAME = "NexAI";
+export const APP_NAME = "La Refactoria";
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Servicios", href: "#servicios" },
@@ -31,28 +31,28 @@ export const SERVICES: ServiceItem[] = [
     title: "Sitios web y canales digitales",
     description: "Diseñamos sitios web, landing pages y canales digitales pensados para mostrar mejor tu negocio y abrir nuevas oportunidades.",
     icon: Globe,
-    color: "#8b5cf6",
+    color: "#7ee0ff",
     tags: ["Presencia Profesional", "Canales Digitales", "Más Oportunidades"]
   },
   {
     title: "Automatización e IA aplicada",
     description: "Reducimos tareas manuales, conectamos herramientas y usamos IA para clasificar, responder, ordenar información y acelerar procesos repetitivos.",
     icon: Workflow,
-    color: "#3b82f6",
+    color: "#c7ff63",
     tags: ["IA Aplicada", "Más Orden", "Respuestas Más Rápidas"]
   },
   {
     title: "Sistemas internos a medida",
     description: "Creamos herramientas para recursos humanos, operación, seguimiento, formularios y control interno adaptadas a tu negocio.",
     icon: ClipboardList,
-    color: "#f59e0b",
+    color: "#ffbf47",
     tags: ["RRHH", "Operación Interna", "Procesos Claros"]
   },
   {
     title: "Digitalización y operación en la nube",
     description: "Organizamos documentos, datos, formularios y procesos para que tu empresa deje atrás el desorden y trabaje con información centralizada.",
     icon: Database,
-    color: "#10b981",
+    color: "#59d6b5",
     tags: ["Documentos", "Nube", "Orden Operativo"]
   },
 ];

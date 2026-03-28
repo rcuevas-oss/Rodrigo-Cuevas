@@ -1,7 +1,7 @@
-# NexAI — Agencia de Automatización y Soluciones de IA
+# La Refactoria — Agencia de Automatización y Soluciones Digitales
 
 <div align="center">
-  <img width="1200" alt="NexAI Hero" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+  <img width="1200" alt="La Refactoria Hero" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
   
   <p align="center">
     <strong>Showroom Digital de Vanguardia</strong><br />
@@ -13,7 +13,7 @@
 
 ## 🚀 Sobre el Proyecto
 
-**NexAI** es un showroom interactivo diseñado para mostrar el potencial de la inteligencia artificial y la automatización en el mundo empresarial moderno. Esta landing page no es solo una carta de presentación, sino una experiencia visual que refleja la precisión y la innovación de nuestra agencia.
+**La Refactoria** es un showroom interactivo diseñado para presentar una agencia enfocada en software a medida, tiendas online y automatización para empresas que quieren crecer con más orden.
 
 ### 🛠️ Especialidades:
 - **Software a Medida**: Desarrollo robusto y escalable adaptado a necesidades específicas.
@@ -74,9 +74,9 @@ Para poner en marcha el showroom en tu entorno local, sigue estos pasos:
 
 ## 📄 Licencia
 
-Este proyecto es privado y propiedad de **NexAI -- Agencia de Automatización**.
+Este proyecto es privado y propiedad de **La Refactoria**.
 
 ---
 <div align="center">
-  Desarrollado con ❤️ por el equipo de NexAI
+  Desarrollado con ❤️ por el equipo de La Refactoria
 </div>

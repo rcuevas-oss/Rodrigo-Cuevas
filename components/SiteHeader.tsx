@@ -9,6 +9,7 @@ import {
     SheetTrigger,
 } from "./ui/sheet"
 import { Menu, ArrowRight, Palette } from "lucide-react"
+import BrandLogo from "./BrandLogo"
 
 const navItems = [
     { label: "Servicios", href: "#servicios" },
@@ -24,21 +25,14 @@ interface SiteHeaderProps {
 
 export default function SiteHeader({ theme, onToggleTheme }: SiteHeaderProps) {
     return (
-        <header className="sticky top-0 z-50 w-full border-b border-[#dbe3ec]/70 bg-[rgba(245,247,251,0.86)] backdrop-blur-xl">
+        <header className="home-site-header sticky top-0 z-50 w-full border-b border-[#dbe3ec]/70 bg-[rgba(245,247,251,0.86)] backdrop-blur-xl">
             <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-[74px] lg:px-8">
                 <div className="flex items-center gap-4 sm:gap-10">
                     <a href="/" className="flex items-center gap-3 transition-opacity hover:opacity-90">
-                        <div className="inline-flex h-8 w-8 items-center justify-center rounded-2xl bg-[#111827] text-white shadow-[0_14px_28px_rgba(17,24,39,0.14)] sm:h-9 sm:w-9">
-                            <span className="text-xs font-bold sm:text-sm">N</span>
-                        </div>
-                        <div className="leading-none">
-                            <span className="block text-base font-bold tracking-tight text-foreground sm:text-lg">
-                                NexAI
-                            </span>
-                            <span className="hidden text-[11px] font-medium text-muted-foreground xl:block">
-                                Soluciones digitales para pymes
-                            </span>
-                        </div>
+                        <BrandLogo
+                            subtitle="Software a medida · Ecommerce · Automatización"
+                            subtitleClassName="hidden xl:block text-[11px] font-medium text-muted-foreground"
+                        />
                     </a>
 
                     <nav className="hidden lg:flex items-center gap-2 rounded-full border border-[#dbe3ec] bg-white/80 px-2 py-2 shadow-[0_10px_28px_rgba(70,85,98,0.05)]">
@@ -89,7 +83,7 @@ export default function SiteHeader({ theme, onToggleTheme }: SiteHeaderProps) {
                         <SheetContent side="right" className="w-[90vw] max-w-[320px] p-0">
                             <div className="flex h-full flex-col p-5">
                                 <SheetHeader>
-                                    <SheetTitle className="text-left font-bold text-foreground">NexAI Menú</SheetTitle>
+                                    <SheetTitle className="text-left font-bold text-foreground">La Refactoria Menú</SheetTitle>
                                 </SheetHeader>
                                 <div className="mt-5 flex flex-col gap-3 overflow-y-auto pl-1">
                                     {navItems.map((item) => (

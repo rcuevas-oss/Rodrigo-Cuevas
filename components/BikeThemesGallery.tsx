@@ -16,6 +16,7 @@ import {
   Wrench,
 } from 'lucide-react';
 import { Button } from './ui/button';
+import BrandLogo from './BrandLogo';
 
 type LayoutCategory = 'all' | 'hero' | 'collection' | 'product' | 'campaign' | 'trust' | 'service' | 'cta';
 
@@ -58,9 +59,9 @@ const layoutCards: LayoutCard[] = [
     id: 'hero-launch',
     category: 'hero',
     eyebrow: 'Hero Layout 01',
-    title: 'Hero de lanzamiento con imagen dominante',
-    summary: 'Un inicio fuerte para destacar novedades, temporada o una marca con peso.',
-    bestFor: 'Lanzamientos, colecciones nuevas y campanas de alto impacto.',
+    title: 'Hero principal de la landing bike',
+    summary: 'La apertura real de la propuesta: especializacion, CTA claro y lectura inmediata del rubro.',
+    bestFor: 'Cuando quieres dejar claro desde el primer scroll que la tienda esta pensada para bike commerce.',
     preview: 'hero-launch',
   },
   {
@@ -187,6 +188,35 @@ const finalNotes = [
   'La pagina final puede mezclar bloques de distintas ideas segun el tipo de cliente, catalogo y marcas del negocio.',
 ];
 
+const galleryFooterTags = ['Hero', 'Collection', 'Product', 'CTA', 'Mobile'];
+
+const galleryFooterSections = [
+  {
+    title: 'Explorar',
+    links: [
+      { label: 'Biblioteca de layouts', href: '#biblioteca-bike' },
+      { label: 'La ficha perfecta', href: '#ficha-bike' },
+      { label: 'Vista movil', href: '#movil-bike' },
+    ],
+  },
+  {
+    title: 'Conectar esta idea',
+    links: [
+      { label: 'Ir al cierre de la landing', href: '/tiendas-bicicletas#contacto-bike' },
+      { label: 'Volver a la landing principal', href: '/tiendas-bicicletas' },
+      { label: 'Volver a la home', href: '/' },
+    ],
+  },
+  {
+    title: 'Uso recomendado',
+    links: [
+      { label: 'Elegir estructura antes que solo colores', href: '#bloques-bike' },
+      { label: 'Pensar la conversion desde telefono', href: '#movil-bike' },
+      { label: 'Cerrar con CTA y confianza', href: '#cta-bike-layouts' },
+    ],
+  },
+];
+
 const galleryAssets = {
   heroWindTunnel: '/bike-assets/gallery/6o15ynks.png',
   heroWorldTour: '/bike-assets/gallery/xf1p2n5p.png',
@@ -232,19 +262,22 @@ const renderPreview = (preview: string) => {
     case 'hero-launch':
       return (
         <PreviewShell className="border-[#24313a] bg-[#0f151b]">
-          <img src={galleryAssets.heroWindTunnel} alt="" className="absolute inset-0 h-full w-full object-cover" />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,10,12,0.18)_0%,rgba(8,10,12,0.54)_58%,rgba(8,10,12,0.86)_100%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(199,255,99,0.18),transparent_22%),radial-gradient(circle_at_82%_18%,rgba(76,211,255,0.12),transparent_20%),linear-gradient(135deg,#091016_0%,#111920_52%,#0a1117_100%)]" />
+          <div className="absolute inset-y-0 right-0 w-[44%] border-l border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.04)]" />
+          <div className="absolute right-4 top-4 w-[34%] overflow-hidden rounded-[1rem] border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.04)]">
+            <img src={galleryAssets.heroWindTunnel} alt="" className="h-[118px] w-full object-cover object-center" />
+          </div>
           <div className="relative flex h-full flex-col justify-between p-5">
             <div className="inline-flex w-fit rounded-full border border-[rgba(255,255,255,0.16)] bg-[rgba(12,14,16,0.48)] px-3 py-1 text-[10px] font-black uppercase tracking-[0.16em] text-[rgba(255,255,255,0.84)]">
-              Hero de campana
+              Shopify + automatizacion
             </div>
-            <div className="max-w-[78%]">
-              <p className="text-[11px] font-black uppercase tracking-[0.18em] text-[#b9ff3b]">Visual dominante</p>
-              <h4 className="mt-3 text-[1.7rem] font-semibold leading-[0.95] tracking-[-0.05em] text-white">
-                Lanzamiento con energia de marca y una imagen que realmente vende.
+            <div className="max-w-[62%]">
+              <p className="text-[11px] font-black uppercase tracking-[0.18em] text-[#b9ff3b]">Landing especializada</p>
+              <h4 className="mt-3 text-[1.55rem] font-semibold leading-[0.95] tracking-[-0.05em] text-white">
+                Ecommerce especializado para tiendas y talleres de bicicletas.
               </h4>
               <div className="mt-4 flex flex-wrap gap-2">
-                {['drop premium', 'nuevo modelo', 'alto impacto'].map((item) => (
+                {['rubro bike', 'shopify', 'catalogo tecnico'].map((item) => (
                   <span
                     key={item}
                     className="rounded-full border border-[rgba(255,255,255,0.12)] bg-[rgba(12,14,16,0.46)] px-3 py-2 text-[10px] font-black uppercase tracking-[0.16em] text-[rgba(255,255,255,0.82)]"
@@ -252,6 +285,9 @@ const renderPreview = (preview: string) => {
                     {item}
                   </span>
                 ))}
+              </div>
+              <div className="mt-4 inline-flex rounded-full bg-[#c7ff63] px-3.5 py-2 text-[10px] font-black uppercase tracking-[0.14em] text-[#111418]">
+                Quiero una tienda
               </div>
             </div>
           </div>
@@ -581,7 +617,12 @@ const renderPreview = (preview: string) => {
   }
 };
 
-const BikeThemesGallery: React.FC = () => {
+interface BikeThemesGalleryProps {
+  theme: 'default' | 'emma';
+  onToggleTheme: () => void;
+}
+
+const BikeThemesGallery: React.FC<BikeThemesGalleryProps> = ({ theme, onToggleTheme }) => {
   const [activeCategory, setActiveCategory] = useState<LayoutCategory>('all');
 
   const visibleCards =
@@ -590,39 +631,43 @@ const BikeThemesGallery: React.FC = () => {
       : layoutCards.filter(card => card.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-[#edf2f6] text-[#111418]">
-      <header className="sticky top-0 z-50 border-b border-[#d9e2e8]/80 bg-[rgba(248,251,253,0.86)] backdrop-blur-xl">
+    <div className="bike-route-root bike-route-gallery min-h-screen w-full overflow-x-hidden bg-[#edf2f6] text-[#111418]">
+      <header className="bike-theme-header sticky top-0 z-50 border-b border-[#d9e2e8]/80 bg-[rgba(248,251,253,0.86)] backdrop-blur-xl">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:h-[74px] lg:px-8">
           <a href="/tiendas-bicicletas" className="group inline-flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#111418] text-[#c7ff63] shadow-[0_14px_30px_rgba(17,20,24,0.12)] transition-transform duration-300 group-hover:-translate-y-0.5">
-              <Palette size={18} />
-            </div>
-            <div>
-              <p className="text-sm font-bold tracking-tight text-[#111418]">NexAI Layouts</p>
-              <p className="hidden text-[11px] text-[#687480] sm:block">Heroes, collections, product y bloques</p>
-            </div>
+            <BrandLogo
+              subtitle="Heroes, collections, product y bloques"
+              subtitleClassName="bike-theme-subtitle hidden text-[11px] text-[#687480] sm:block"
+            />
           </a>
 
           <div className="flex items-center gap-2 sm:gap-3">
-            <Button asChild variant="outline" className="rounded-2xl border-[#d1dbe3] bg-white px-3 text-[#111418] hover:bg-[#f5f8fb] sm:px-4">
+            <Button
+              type="button"
+              variant="ghost"
+              onClick={onToggleTheme}
+              aria-label={theme === 'default' ? 'Activar modo Emma' : 'Volver al modo original'}
+              className="bike-theme-toggle rounded-2xl border border-[#d1dbe3] bg-white px-3 text-[#111418] shadow-[0_12px_30px_rgba(70,85,98,0.06)] hover:bg-[#f5f8fb] sm:px-4"
+            >
+              <Palette size={16} className={theme === 'emma' ? 'text-[#c7ff63]' : ''} />
+              <span className="hidden text-xs font-semibold sm:inline">{theme === 'default' ? 'Modo Emma' : 'Modo Original'}</span>
+            </Button>
+            <Button asChild variant="outline" className="bike-theme-outline-button rounded-2xl border-[#d1dbe3] bg-white px-3 text-[#111418] hover:bg-[#f5f8fb] sm:px-4">
               <a href="/tiendas-bicicletas">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 <span className="hidden sm:inline">Volver a la landing</span>
                 <span className="sm:hidden">Volver</span>
               </a>
             </Button>
-            <Button asChild className="rounded-2xl bg-[#111418] px-3 text-white hover:bg-[#1b2128] sm:px-4">
-              <a href="/tiendas-bicicletas#contacto-bike">
-                <span className="hidden sm:inline">Quiero esta direccion</span>
-                <span className="sm:hidden">Elegir</span>
-              </a>
-            </Button>
           </div>
         </div>
       </header>
 
-      <main>
-        <section className="relative overflow-hidden border-b border-[#d8e1e8] bg-[linear-gradient(180deg,#f8fbfd_0%,#edf2f6_100%)] pb-14 pt-12 sm:pb-16 sm:pt-14 lg:pb-20">
+      <main className="w-full">
+        <section
+          id="biblioteca-bike"
+          className="bike-theme-section-muted relative overflow-hidden border-b border-[#d8e1e8] bg-[linear-gradient(180deg,#f8fbfd_0%,#edf2f6_100%)] pb-14 pt-12 sm:pb-16 sm:pt-14 lg:pb-20"
+        >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(199,255,99,0.18),transparent_24%),radial-gradient(circle_at_88%_20%,rgba(124,222,255,0.16),transparent_20%)]" />
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid items-start gap-10 lg:grid-cols-[0.96fr_1.04fr] lg:gap-14">
@@ -631,28 +676,32 @@ const BikeThemesGallery: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="inline-flex items-center gap-2 rounded-full border border-[#d7e0e7] bg-white/90 px-4 py-2 text-[11px] font-black uppercase tracking-[0.18em] text-[#5a6570] shadow-[0_14px_30px_rgba(70,85,98,0.06)]">
+                <div className="bike-theme-pill inline-flex items-center gap-2 rounded-full border border-[#d7e0e7] bg-white/90 px-3.5 py-2 text-[10px] font-black uppercase tracking-[0.16em] text-[#5a6570] shadow-[0_14px_30px_rgba(70,85,98,0.06)] sm:px-4 sm:text-[11px] sm:tracking-[0.18em]">
                   <Sparkles className="h-3.5 w-3.5 text-[#79aa0f]" />
                   Biblioteca de layouts
                 </div>
 
-                <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[0.94] tracking-[-0.05em] text-[#111418] sm:text-5xl lg:text-[5rem]">
+                <h1 className="bike-theme-heading mt-6 max-w-4xl text-[2.8rem] font-semibold leading-[0.98] tracking-[-0.045em] text-[#111418] sm:text-5xl sm:leading-[0.94] sm:tracking-[-0.05em] lg:text-[5rem]">
                   Heroes, collections, product layouts y bloques para vender una tienda bike con mas nivel.
                 </h1>
 
-                <p className="mt-6 max-w-2xl text-base leading-relaxed text-[#61707c] sm:text-lg">
+                <p className="bike-theme-text mt-6 max-w-2xl text-[0.98rem] leading-[1.8] text-[#61707c] sm:text-lg sm:leading-relaxed">
                   Esta pagina ya no esta pensada como “tema visual”. Ahora funciona como biblioteca de piezas reales: layouts de coleccion, fichas, campanas, bloques de confianza y cierre comercial.
                 </p>
 
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <Button asChild size="lg" className="w-full rounded-2xl bg-[#111418] text-white shadow-[0_20px_50px_rgba(17,20,24,0.14)] hover:bg-[#1a2026] sm:w-auto">
+                <div className="mt-8 grid gap-3 sm:flex sm:flex-row">
+                  <Button asChild size="lg" className="bike-theme-primary-button h-auto min-h-14 w-full whitespace-normal rounded-2xl bg-[#111418] px-5 py-4 text-center leading-snug text-white shadow-[0_20px_50px_rgba(17,20,24,0.14)] hover:bg-[#1a2026] sm:h-12 sm:min-h-0 sm:w-auto sm:px-8 sm:py-0 sm:whitespace-nowrap">
                     <a href="/tiendas-bicicletas#contacto-bike">
-                      Elegir bloques para mi tienda
+                      <span className="sm:hidden">Elegir bloques para mi tienda</span>
+                      <span className="hidden sm:inline">Elegir bloques para mi tienda</span>
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </a>
                   </Button>
-                  <Button asChild size="lg" variant="outline" className="w-full rounded-2xl border-[#d1dbe3] bg-white text-[#111418] hover:bg-[#f5f8fb] sm:w-auto">
-                    <a href="/tiendas-bicicletas">Ver landing principal</a>
+                  <Button asChild size="lg" variant="outline" className="bike-theme-outline-button h-auto min-h-14 w-full whitespace-normal rounded-2xl border-[#d1dbe3] bg-white px-5 py-4 text-center leading-snug text-[#111418] hover:bg-[#f5f8fb] sm:h-12 sm:min-h-0 sm:w-auto sm:px-8 sm:py-0 sm:whitespace-nowrap">
+                    <a href="/tiendas-bicicletas">
+                      <span className="sm:hidden">Ver landing bike</span>
+                      <span className="hidden sm:inline">Ver landing principal</span>
+                    </a>
                   </Button>
                 </div>
 
@@ -660,7 +709,7 @@ const BikeThemesGallery: React.FC = () => {
                   {['Product layouts', 'Collection layouts', 'La ficha perfecta', 'Bloques de confianza', 'Taller y servicio'].map((item) => (
                     <div
                       key={item}
-                      className="rounded-full border border-[#d9e2e8] bg-white/90 px-3.5 py-2 text-[11px] font-black uppercase tracking-[0.14em] text-[#586571]"
+                      className="bike-theme-pill rounded-full border border-[#d9e2e8] bg-white/90 px-3 py-2 text-[10px] font-black uppercase tracking-[0.12em] text-[#586571] sm:px-3.5 sm:text-[11px] sm:tracking-[0.14em]"
                     >
                       {item}
                     </div>
@@ -677,13 +726,13 @@ const BikeThemesGallery: React.FC = () => {
                 {layoutCards.slice(0, 4).map((card, index) => (
                   <div
                     key={card.id}
-                    className={`overflow-hidden rounded-[2rem] border border-[#d8e1e8] bg-white p-4 shadow-[0_20px_55px_rgba(70,85,98,0.06)] ${index % 2 === 0 ? 'sm:translate-y-4' : ''}`}
+                    className={`bike-theme-surface overflow-hidden rounded-[2rem] border border-[#d8e1e8] bg-white p-4 shadow-[0_20px_55px_rgba(70,85,98,0.06)] ${index % 2 === 0 ? 'sm:translate-y-4' : ''}`}
                   >
                     <div className="h-[190px] overflow-hidden rounded-[1.35rem] border border-[#e1e8ee] bg-[#f6f9fb]">
                       {renderPreview(card.preview)}
                     </div>
                     <p className="mt-4 text-[10px] font-black uppercase tracking-[0.18em] text-[#79aa0f]">{card.eyebrow}</p>
-                    <p className="mt-2 text-[1.15rem] font-semibold tracking-[-0.04em] text-[#111418]">{card.title}</p>
+                    <p className="bike-theme-heading mt-2 text-[1.15rem] font-semibold tracking-[-0.04em] text-[#111418]">{card.title}</p>
                   </div>
                 ))}
               </motion.div>
@@ -692,20 +741,21 @@ const BikeThemesGallery: React.FC = () => {
         </section>
 
         <motion.section
+          id="ficha-bike"
           variants={sectionReveal}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
-          className="border-b border-[#d8e1e8] bg-[#f7fafc] py-16 sm:py-20"
+          className="bike-theme-section-light border-b border-[#d8e1e8] bg-[#f7fafc] py-16 sm:py-20"
         >
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 lg:grid-cols-[0.76fr_1.24fr] lg:gap-10">
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.22em] text-[#79aa0f]">La ficha perfecta</p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-[-0.05em] text-[#111418] sm:text-4xl">
+                <h2 className="bike-theme-heading mt-4 text-3xl font-semibold tracking-[-0.05em] text-[#111418] sm:text-4xl">
                   Una estructura ideal para vender mejor productos con decision tecnica
                 </h2>
-                <p className="mt-5 text-sm leading-relaxed text-[#61707c] sm:text-base">
+                <p className="bike-theme-text mt-5 text-sm leading-relaxed text-[#61707c] sm:text-base">
                   Aqui la idea no es solo que la pagina se vea linda. La idea es que el cliente entienda, confie y compre. Por eso esta ficha mezcla imagenes, compra clara, datos tecnicos y confianza comercial.
                 </p>
 
@@ -713,18 +763,18 @@ const BikeThemesGallery: React.FC = () => {
                   {perfectProductModules.map((item) => (
                     <div
                       key={item}
-                      className="flex items-start gap-4 rounded-[1.5rem] border border-[#d8e1e8] bg-white px-4 py-4 shadow-[0_14px_36px_rgba(70,85,98,0.05)]"
+                      className="bike-theme-surface flex items-start gap-4 rounded-[1.5rem] border border-[#d8e1e8] bg-white px-4 py-4 shadow-[0_14px_36px_rgba(70,85,98,0.05)]"
                     >
                       <div className="flex h-10 w-10 flex-none items-center justify-center rounded-2xl bg-[#111418] text-white">
                         <Check className="h-4 w-4" />
                       </div>
-                      <p className="text-sm leading-relaxed text-[#31404d]">{item}</p>
+                      <p className="bike-theme-text text-sm leading-relaxed text-[#31404d]">{item}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="overflow-hidden rounded-[2.4rem] border border-[#d8e1e8] bg-white p-4 shadow-[0_28px_80px_rgba(70,85,98,0.08)] sm:p-5">
+              <div className="bike-theme-surface overflow-hidden rounded-[2.4rem] border border-[#d8e1e8] bg-white p-4 shadow-[0_28px_80px_rgba(70,85,98,0.08)] sm:p-5">
                 <div className="grid gap-4 lg:grid-cols-[1.02fr_0.98fr]">
                   <div className="overflow-hidden rounded-[1.8rem] border border-[#dfe6ec] bg-[#f6f8fb]">
                     <div className="grid h-full gap-3 p-4">
@@ -743,7 +793,7 @@ const BikeThemesGallery: React.FC = () => {
                   <div className="grid gap-4">
                     <div className="rounded-[1.6rem] border border-[#dfe6ec] bg-[#f7fafc] p-4">
                       <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#7a8792]">Sticky buy area</p>
-                      <h3 className="mt-3 text-[1.35rem] font-semibold tracking-[-0.04em] text-[#111418]">
+                      <h3 className="bike-theme-heading mt-3 text-[1.35rem] font-semibold tracking-[-0.04em] text-[#111418]">
                         Precio, variantes, stock y CTA en una zona muy clara.
                       </h3>
                       <div className="mt-4 grid gap-2">
@@ -760,7 +810,7 @@ const BikeThemesGallery: React.FC = () => {
                       </div>
                     </div>
                     <div className="grid gap-4 sm:grid-cols-2">
-                      <div className="rounded-[1.4rem] border border-[#dfe6ec] bg-white p-4">
+                        <div className="bike-theme-surface-alt rounded-[1.4rem] border border-[#dfe6ec] bg-white p-4">
                         <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#79aa0f]">Specs</p>
                         <div className="mt-4 grid gap-2">
                           {Array.from({ length: 4 }).map((_, index) => (
@@ -768,7 +818,7 @@ const BikeThemesGallery: React.FC = () => {
                           ))}
                         </div>
                       </div>
-                      <div className="rounded-[1.4rem] border border-[#dfe6ec] bg-white p-4">
+                        <div className="bike-theme-surface-alt rounded-[1.4rem] border border-[#dfe6ec] bg-white p-4">
                         <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#79aa0f]">Confianza</p>
                         <div className="mt-4 grid gap-2">
                           {['Envio', 'Garantia', 'WhatsApp', 'Pago'].map((item) => (
@@ -799,12 +849,12 @@ const BikeThemesGallery: React.FC = () => {
           </div>
         </motion.section>
 
-        <section className="py-16 sm:py-20">
+        <section id="bloques-bike" className="bike-theme-section-muted py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div className="max-w-3xl">
                 <p className="text-xs font-black uppercase tracking-[0.22em] text-[#79aa0f]">Layouts y bloques</p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-[-0.05em] text-[#111418] sm:text-4xl">
+                  <h2 className="bike-theme-heading mt-4 text-3xl font-semibold tracking-[-0.05em] text-[#111418] sm:text-4xl">
                   Un showroom mas util para un cliente que decide por estructura y sensacion visual
                 </h2>
               </div>
@@ -820,7 +870,7 @@ const BikeThemesGallery: React.FC = () => {
                       className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-[11px] font-black uppercase tracking-[0.16em] transition-colors ${
                         isActive
                           ? 'bg-[#111418] text-white shadow-[0_14px_34px_rgba(17,20,24,0.12)]'
-                          : 'border border-[#d8e1e8] bg-white text-[#586571] hover:bg-[#f5f8fb]'
+                          : 'bike-theme-card-unselected border border-[#d8e1e8] bg-white text-[#586571] hover:bg-[#f5f8fb]'
                       }`}
                     >
                       <Icon className="h-3.5 w-3.5" />
@@ -839,12 +889,12 @@ const BikeThemesGallery: React.FC = () => {
                   initial="hidden"
                   whileInView="visible"
                   viewport={{ once: true, amount: 0.1 }}
-                  className="overflow-hidden rounded-[2.2rem] border border-[#d8e1e8] bg-white shadow-[0_22px_60px_rgba(70,85,98,0.06)]"
+                  className="bike-theme-surface overflow-hidden rounded-[2.2rem] border border-[#d8e1e8] bg-white shadow-[0_22px_60px_rgba(70,85,98,0.06)]"
                 >
                   <div className="border-b border-[#e1e8ee] bg-[#f8fbfd] p-4 sm:p-5">
                     <div className="flex items-center justify-between gap-4">
                       <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#79aa0f]">{card.eyebrow}</p>
-                      <div className="rounded-full border border-[#dde5eb] bg-white px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.16em] text-[#61707c]">
+                      <div className="bike-theme-pill rounded-full border border-[#dde5eb] bg-white px-3 py-1.5 text-[10px] font-black uppercase tracking-[0.16em] text-[#61707c]">
                         {card.category}
                       </div>
                     </div>
@@ -853,11 +903,11 @@ const BikeThemesGallery: React.FC = () => {
                     </div>
                   </div>
                   <div className="p-5 sm:p-6">
-                    <h3 className="text-[1.45rem] font-semibold tracking-[-0.04em] text-[#111418]">{card.title}</h3>
-                    <p className="mt-3 text-sm leading-relaxed text-[#61707c] sm:text-base">{card.summary}</p>
-                    <div className="mt-5 rounded-[1.3rem] border border-[#d8e1e8] bg-[#f8fbfd] px-4 py-4">
+                    <h3 className="bike-theme-heading text-[1.45rem] font-semibold tracking-[-0.04em] text-[#111418]">{card.title}</h3>
+                    <p className="bike-theme-text mt-3 text-sm leading-relaxed text-[#61707c] sm:text-base">{card.summary}</p>
+                    <div className="bike-theme-surface-alt mt-5 rounded-[1.3rem] border border-[#d8e1e8] bg-[#f8fbfd] px-4 py-4">
                       <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#7a8792]">Ideal para</p>
-                      <p className="mt-2 text-sm leading-relaxed text-[#31404d]">{card.bestFor}</p>
+                      <p className="bike-theme-text mt-2 text-sm leading-relaxed text-[#31404d]">{card.bestFor}</p>
                     </div>
                   </div>
                 </motion.article>
@@ -867,23 +917,24 @@ const BikeThemesGallery: React.FC = () => {
         </section>
 
         <motion.section
+          id="movil-bike"
           variants={sectionReveal}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.15 }}
-          className="border-y border-[#d8e1e8] bg-[#f7fafc] py-16 sm:py-20"
+          className="bike-theme-section-light border-y border-[#d8e1e8] bg-[#f7fafc] py-16 sm:py-20"
         >
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:gap-10">
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.22em] text-[#79aa0f]">Vista movil</p>
-                <h2 className="mt-4 text-3xl font-semibold tracking-[-0.05em] text-[#111418] sm:text-4xl">
+                <h2 className="bike-theme-heading mt-4 text-3xl font-semibold tracking-[-0.05em] text-[#111418] sm:text-4xl">
                   Cada layout tambien deberia poder venderse bien desde telefono
                 </h2>
-                <p className="mt-5 text-sm leading-relaxed text-[#61707c] sm:text-base">
+                <p className="bike-theme-text mt-5 text-sm leading-relaxed text-[#61707c] sm:text-base">
                   Esto importa mucho en bike commerce porque gran parte de la primera visita llega desde anuncios, Instagram, WhatsApp o una referencia directa. Por eso la biblioteca ya considera lectura mobile.
                 </p>
-                <div className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#d8e1e8] bg-white px-4 py-2 text-[11px] font-black uppercase tracking-[0.16em] text-[#586571]">
+                <div className="bike-theme-pill mt-6 inline-flex items-center gap-2 rounded-full border border-[#d8e1e8] bg-white px-4 py-2 text-[11px] font-black uppercase tracking-[0.16em] text-[#586571]">
                   <MonitorSmartphone className="h-4 w-4 text-[#79aa0f]" />
                   pensado para revision en telefono
                 </div>
@@ -922,7 +973,7 @@ const BikeThemesGallery: React.FC = () => {
                     lineB: 'bg-[rgba(255,255,255,0.18)]',
                   },
                 ].map((item) => (
-                  <div key={item.label} className="rounded-[1.8rem] border border-[#d8e1e8] bg-white p-4 shadow-[0_16px_45px_rgba(70,85,98,0.06)]">
+                  <div key={item.label} className="bike-theme-surface rounded-[1.8rem] border border-[#d8e1e8] bg-white p-4 shadow-[0_16px_45px_rgba(70,85,98,0.06)]">
                     <div className={`mx-auto w-[8.7rem] rounded-[1.9rem] border border-[#d9e2e8] p-2 shadow-[0_16px_30px_rgba(17,20,24,0.12)] ${item.frame}`}>
                       <div className={`rounded-[1.35rem] p-2 ${item.inner}`}>
                         <div className={`overflow-hidden rounded-[1.1rem] p-3 ${item.body}`}>
@@ -936,7 +987,7 @@ const BikeThemesGallery: React.FC = () => {
                         </div>
                       </div>
                     </div>
-                    <p className="mt-4 text-sm font-semibold tracking-[-0.03em] text-[#111418]">{item.label}</p>
+                    <p className="bike-theme-heading mt-4 text-sm font-semibold tracking-[-0.03em] text-[#111418]">{item.label}</p>
                   </div>
                 ))}
               </div>
@@ -944,26 +995,26 @@ const BikeThemesGallery: React.FC = () => {
           </div>
         </motion.section>
 
-        <section className="py-16 sm:py-20">
+        <section id="cta-bike-layouts" className="py-16 sm:py-20">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="overflow-hidden rounded-[2.8rem] border border-[#d8e1e8] bg-[linear-gradient(135deg,#111418_0%,#1a2229_55%,#11181f_100%)] px-6 py-8 text-white shadow-[0_32px_90px_rgba(17,20,24,0.18)] sm:px-8 sm:py-10 lg:px-10 lg:py-12">
               <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:gap-10">
                 <div>
                   <p className="text-xs font-black uppercase tracking-[0.22em] text-[#c7ff63]">Siguiente paso</p>
-                  <h2 className="mt-4 text-3xl font-semibold tracking-[-0.05em] text-white sm:text-4xl">
+                  <h2 className="mt-4 text-[2rem] font-semibold leading-[1.02] tracking-[-0.04em] text-white sm:text-4xl sm:leading-none sm:tracking-[-0.05em]">
                     Esta biblioteca ya se puede sentir mas real, variada y especifica para una tienda del rubro
                   </h2>
                   <p className="mt-5 text-sm leading-relaxed text-[rgba(255,255,255,0.76)] sm:text-base">
                     Ya no parte solo desde bloques abstractos. Ahora mezcla bicicletas, accesorios, banners y piezas reales para mostrar mas criterio visual, mas variedad de marcas y una propuesta mas creible frente al cliente.
                   </p>
-                  <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                    <Button asChild size="lg" className="w-full rounded-2xl bg-[#c7ff63] text-[#111418] shadow-[0_20px_50px_rgba(199,255,99,0.20)] hover:bg-[#d8ff91] sm:w-auto">
+                  <div className="mt-8 grid gap-3 sm:flex sm:flex-row">
+                    <Button asChild size="lg" className="h-auto min-h-14 w-full whitespace-normal rounded-2xl bg-[#c7ff63] px-5 py-4 text-center leading-snug text-[#111418] shadow-[0_20px_50px_rgba(199,255,99,0.20)] hover:bg-[#d8ff91] sm:h-12 sm:min-h-0 sm:w-auto sm:px-8 sm:py-0 sm:whitespace-nowrap">
                       <a href="/tiendas-bicicletas#contacto-bike">
                         Quiero convertir esto en una propuesta real
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </a>
                     </Button>
-                    <Button asChild size="lg" variant="outline" className="w-full rounded-2xl border-[rgba(255,255,255,0.18)] bg-[rgba(255,255,255,0.04)] text-white hover:bg-[rgba(255,255,255,0.08)] hover:text-white sm:w-auto">
+                    <Button asChild size="lg" variant="outline" className="h-auto min-h-14 w-full whitespace-normal rounded-2xl border-[rgba(255,255,255,0.18)] bg-[rgba(255,255,255,0.04)] px-5 py-4 text-center leading-snug text-white hover:bg-[rgba(255,255,255,0.08)] hover:text-white sm:h-12 sm:min-h-0 sm:w-auto sm:px-8 sm:py-0 sm:whitespace-nowrap">
                       <a href="/tiendas-bicicletas">
                         Volver a la landing
                         <ChevronRight className="ml-2 h-4 w-4" />
@@ -990,6 +1041,65 @@ const BikeThemesGallery: React.FC = () => {
           </div>
         </section>
       </main>
+
+      <footer className="bike-theme-footer border-t border-[#1b2430] bg-[#0f1622] py-14 text-white sm:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+            <div className="max-w-2xl">
+              <BrandLogo
+                tone="light"
+                subtitle="Biblioteca bike commerce · Layouts · Mobile"
+                subtitleClassName="bike-theme-subtitle text-[11px] text-[rgba(255,255,255,0.62)]"
+              />
+              <p className="mt-5 text-[15px] leading-relaxed text-[rgba(255,255,255,0.68)] sm:text-base">
+                Este showroom sirve para aterrizar estructura, jerarquia visual y recorrido comercial antes de pasar a una propuesta final para una tienda del rubro.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-2.5 lg:justify-end">
+              {galleryFooterTags.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-full border border-white/10 bg-white/6 px-3.5 py-2 text-[10px] font-black uppercase tracking-[0.16em] text-white/70 sm:text-[11px]"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-10 grid gap-8 md:grid-cols-4">
+            <div className="md:col-span-1">
+              <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-5">
+                <p className="text-[10px] font-black uppercase tracking-[0.18em] text-[#c7ff63]">Lectura final</p>
+                <p className="mt-3 text-sm leading-relaxed text-[rgba(255,255,255,0.76)]">
+                  La pagina ya no termina de golpe. Ahora cierra con un footer real, mas scroll util y una sensacion mas completa tanto en desktop como en telefono.
+                </p>
+              </div>
+            </div>
+
+            {galleryFooterSections.map((section) => (
+              <div key={section.title}>
+                <h4 className="mb-4 text-sm font-semibold text-white">{section.title}</h4>
+                <ul className="space-y-3 text-sm text-[rgba(255,255,255,0.68)]">
+                  {section.links.map((link) => (
+                    <li key={link.label}>
+                      <a href={link.href} className="bike-theme-footer-link transition-colors hover:text-white">
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-[rgba(255,255,255,0.52)] md:flex-row md:items-center md:justify-between">
+            <p>&copy; {new Date().getFullYear()} La Refactoria. Biblioteca visual para ecommerce especializados del rubro bicicleta.</p>
+            <p>Mas recorrido, sin corte brusco al final y con enlaces utiles para seguir navegando.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
